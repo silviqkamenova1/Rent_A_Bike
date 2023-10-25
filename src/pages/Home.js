@@ -7,6 +7,7 @@ import Customers from './Customers';
 import News from './News';
 import Contact from './Contact';
 import Footer from './Footer';
+import Copyright from './Copyright';
 
 
 export default function Home() {
@@ -40,11 +41,7 @@ export default function Home() {
 
             <Footer />
 
-            <div className="copyright_section">
-               <div className="container">
-                  <p className="copyright_text">Copyright 2019 All Right Reserved By.<a href="https://html.design" /> Free  html Templates</p>
-               </div>
-            </div>
+            <Copyright />
 
          </body>
       </>
