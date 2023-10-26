@@ -18,7 +18,7 @@ export default function OurCycles() {
                             <h1 className="cycles_text">Cycles</h1>
                             <p className="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
                             <div className="btn_main">
-                                <div className="buy_bt"><a href="#">Buy Now</a></div>
+                                <div className="buy_bt"><a href="/cycle/rent">Rent Now</a></div>
                                 <h4 className="price_text">Price <span className='span2'>$</span> <span className='span3'>200</span></h4>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ export default function OurCycles() {
                             <h1 className="cycles_text">Stylis Cycle</h1>
                             <p className="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
                             <div className="btn_main">
-                                <div className="buy_bt"><a href="#">Buy Now</a></div>
+                                <div className="buy_bt"><a href="/cycle/rent">Rent Now</a></div>
                                 <h4 className="price_text">Price <span className='span2'>$</span> <span >200</span></h4>
                             </div>
                         </div>

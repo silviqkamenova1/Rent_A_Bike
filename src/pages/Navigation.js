@@ -31,9 +31,9 @@ export default function Navigation() {
                 <form className="form-inline my-2 my-lg-0">
                     <div className="login_menu">
                         <ul>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#"><img alt='' src="assets/images/trolly-icon.png" /></a></li>
-                            <li><a href="#"><img alt='' src="assets/images/search-icon.png" /></a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/cycle/trolly"><img alt='' src="assets/images/trolly-icon.png" /></a></li>
+                            <li><a href="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></a></li>
                         </ul>
                     </div>
                     <div></div>

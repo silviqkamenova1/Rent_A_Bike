@@ -10,7 +10,7 @@ export default function AboutStore() {
                 <div className="about_main">
                     <img alt='' src="assets/images/img-5.png" className="image_5" />
                 </div>
-                <div className="read_bt_1"><a href="#">Read More</a></div>
+                <div className="read_bt_1"><a href="/moreInfo">Read More</a></div>
             </div>
         </div>
     );

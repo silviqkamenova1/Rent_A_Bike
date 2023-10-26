@@ -20,7 +20,7 @@ export default function Contact() {
                     <textarea className="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
                  </div>
               </form>
-              <div className="send_btn"><a href="#">SEND</a></div>
+              <div className="send_btn"><a href="/send">SEND</a></div>
            </div>
         </div>
      </div>
