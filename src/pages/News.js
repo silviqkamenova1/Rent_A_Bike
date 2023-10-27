@@ -10,7 +10,7 @@ export default function News() {
                     <div className="row">
                         <div className="col-sm-4">
                             <div className="box_main_1">
-                                <div className="zoomout frame"><img alt='' src="assets/images/img-6.png" /></div>
+                                <div className="zoomout frame"><img alt='' src="https://cdn.mos.cms.futurecdn.net/kbTYPZZHgDCnu46t3WqJmX-650-80.jpg.webp" /></div>
                                 <div className="padding_15">
                                     <h2 className="speed_text">Speed cycle</h2>
                                     <div className="post_text">Post by : Den <span className='span4'>20-12-2019</span></div>
