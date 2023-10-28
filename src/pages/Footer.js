@@ -20,8 +20,8 @@ export default function Footer() {
                     <ul>
                        <li><a href="/fb"><img alt='' src="assets/images/fb-icon1.png"/></a></li>
                        <li><a href="/twitter"><img alt='' src="assets/images/twitter-icon.png"/></a></li>
-                       <li><a href="/linkedin"><img alt='' src="assets/images/linkedin-icon.png"/></a></li>
-                       <li><a href="/instagram"><img alt='' src="assets/images/instagram-icon.png"/></a></li>
+                       <li><a href="https://www.linkedin.com/in/silviya-georgieva-15a324255/"><img alt='' src="assets/images/linkedin-icon.png"/></a></li>
+                       <li><a href="https://www.instagram.com/silviqkamenova/"><img alt='' src="assets/images/instagram-icon.png"/></a></li>
                     </ul>
                  </div>
                  <input type="text" className="email_text" placeholder="Enter Your Email" name="Enter Your Email"/>
