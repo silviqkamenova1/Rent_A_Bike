@@ -1,13 +1,13 @@
 import React from 'react';
 import Navigation from './Navigation';
-import Banner from './Banner';
-import OurCycles from './OurCycles';
-import AboutStore from './AboutStore';
-import Customers from './Customers';
-import News from './News';
-import Contact from './Contact';
-import Footer from './Footer';
-import Copyright from './Copyright';
+import Banner from '../Banner/Banner';
+import OurCycles from '../OurCycles/OurCycles';
+import AboutStore from '../AboutStore/AboutStore';
+import Customers from '../Customer/Customers';
+import News from '../News/News';
+import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
+import Copyright from '../Copyright/Copyright';
 
 
 export default function Home() {
