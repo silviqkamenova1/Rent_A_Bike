@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Home  from './components/Home/Home';
@@ -14,6 +14,8 @@ import Copyright  from './components/Copyright/Copyright';
 
 
 import './App.css'
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 export default function App() {
 
@@ -40,10 +42,10 @@ export default function App() {
          <Routes>
             <Route path='/' element= {<Home />} />
             <Route path='/create' element= {<AddCycle />} />
+            <Route path='/contact' element = { <Contact />} />
             <Route path='/about' element = { <AboutStore />} />
             <Route path='' element = { <Customers />} />
             <Route path='/news' element = { <News />} />
-            <Route path='/contact' element = { <Contact />} />
          </Routes>
 
             <Footer />
