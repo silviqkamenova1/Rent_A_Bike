@@ -10,28 +10,30 @@ export default function Navigation() {
             <div className="collapse navbar-collapse" >
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="index.html">Home</a>
+                        <a className="nav-link" href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="about.html">About</a>
+                        <a className="nav-link" href="/about">About</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="cycle.html">Our Cycle</a>
+                        <a className="nav-link" href="/create">Add Cycle</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="shop.html">Shop</a>
+                        <a className="nav-link" href="/shop">Shop</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="news.html">News</a>
+                        <a className="nav-link" href="/news">News</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="contact.html">Contact Us</a>
+                        <a className="nav-link" href="/contact">Contact Us</a>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                     <div className="login_menu">
                         <ul>
                             <li><a href="/login">Login</a></li>
+                            <li><a href="/login">Register</a></li>
+                            <li><a href="/login">Logout</a></li>
                             <li><a href="/cycle/trolly"><img alt='' src="assets/images/trolly-icon.png" /></a></li>
                             <li><a href="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></a></li>
                         </ul>
