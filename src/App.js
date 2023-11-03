@@ -16,6 +16,8 @@ import Copyright  from './components/Copyright/Copyright';
 import './App.css'
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import OurCycles from './components/AddCycle/AddCycle';
+import Catalog from './components/Catalog/Catalog';
 
 export default function App() {
 
@@ -37,19 +39,26 @@ export default function App() {
       <>
          <body>
             <div className="header_section header_bg">
-               <Navigation />     
+               <Navigation /> 
+               <Routes>
+                  <Route path='/' element= {<Home />} />
+               </Routes>
             </div>
          <Routes>
-            <Route path='/' element= {<Home />} />
             <Route path='/create' element= {<AddCycle />} />
             <Route path='/contact' element = { <Contact />} />
             <Route path='/about' element = { <AboutStore />} />
             <Route path='' element = { <Customers />} />
             <Route path='/news' element = { <News />} />
-         </Routes>
+            <Route path='/login' element = { <Login />} />
+            <Route path='/register' element = { <Register />} />
+            <Route path='/news' element = { <Footer />} />
+            <Route path='/news' element = { <Copyright />} />
+            <Route path='/catalog' element = { <Catalog />} />
 
-            <Footer />
-            <Copyright />
+            {/* <Footer />
+            <Copyright /> */}
+         </Routes>
          </body>
       </>
    );

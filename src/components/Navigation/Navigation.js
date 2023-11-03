@@ -19,7 +19,7 @@ export default function Navigation() {
                         <a className="nav-link" href="/create">Add Cycle</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/shop">Shop</a>
+                        <a className="nav-link" href="/catalog">Shop</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/news">News</a>
@@ -32,8 +32,8 @@ export default function Navigation() {
                     <div className="login_menu">
                         <ul>
                             <li><a href="/login">Login</a></li>
-                            <li><a href="/login">Register</a></li>
-                            <li><a href="/login">Logout</a></li>
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/logout">Logout</a></li>
                             <li><a href="/cycle/trolly"><img alt='' src="assets/images/trolly-icon.png" /></a></li>
                             <li><a href="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></a></li>
                         </ul>
