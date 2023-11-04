@@ -1,10 +1,10 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Home  from './components/Home/Home';
 import Navigation  from './components/Navigation/Navigation';
-import AddCycle  from './components/AddCycle/AddCycle';
+import AddBike  from './components/AddBike/AddBike';
 import AboutStore  from './components/AboutStore/AboutStore';
 import Customers  from './components/Customer/Customers';
 import News  from './components/News/News';
@@ -16,11 +16,11 @@ import Copyright  from './components/Copyright/Copyright';
 import './App.css'
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import OurCycles from './components/AddCycle/AddCycle';
 import Catalog from './components/Catalog/Catalog';
 
-export default function App() {
-
+export default function  App() {
+   const [bikes, setBikes] = useState([])
+   
    // function openNav() {
    //    document.getElementById("mySidenav").style.width = "250px";
    //    document.getElementById("main").style.marginLeft = "250px";
@@ -45,7 +45,7 @@ export default function App() {
                </Routes>
             </div>
          <Routes>
-            <Route path='/create' element= {<AddCycle />} />
+            <Route path='/create' element= {<AddBike />} />
             <Route path='/contact' element = { <Contact />} />
             <Route path='/about' element = { <AboutStore />} />
             <Route path='' element = { <Customers />} />
