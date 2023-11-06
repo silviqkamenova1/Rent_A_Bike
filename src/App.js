@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useNavigate, Route, Routes } from 'react-router-dom';
+import * as bikeService from './services/bikeService'
 
 import Home  from './components/Home/Home';
 import Navigation  from './components/Navigation/Navigation';
@@ -19,7 +20,23 @@ import Register from './components/Register/Register';
 import Catalog from './components/Catalog/Catalog';
 
 export default function  App() {
+   const navigate= useNavigate()
    const [bikes, setBikes] = useState([])
+
+   useEffect(() => {
+      bikeService.getAll()
+      .then(result => {
+         setBikes(result)
+      })
+   }, [])
+
+   const onCerateBikeSubmit = async (data) => {
+      const newBike = await bikeService.create(data);
+  
+      setBikes(state => [...state, newBike]);
+  
+      navigate('/catalog')
+    };
    
    // function openNav() {
    //    document.getElementById("mySidenav").style.width = "250px";
@@ -45,16 +62,16 @@ export default function  App() {
                </Routes>
             </div>
          <Routes>
-            <Route path='/create' element= {<AddBike />} />
+            <Route path='/create' element= {<AddBike onCerateBikeSubmit={onCerateBikeSubmit}/>} />
             <Route path='/contact' element = { <Contact />} />
-            <Route path='/about' element = { <AboutStore />} />
+            {/* <Route path='/about' element = { <AboutStore />} /> */}
             <Route path='' element = { <Customers />} />
             <Route path='/news' element = { <News />} />
             <Route path='/login' element = { <Login />} />
             <Route path='/register' element = { <Register />} />
             <Route path='/news' element = { <Footer />} />
             <Route path='/news' element = { <Copyright />} />
-            <Route path='/catalog' element = { <Catalog />} />
+            <Route path='/catalog' element = { <Catalog bikes={bikes}/>} />
 
             {/* <Footer />
             <Copyright /> */}

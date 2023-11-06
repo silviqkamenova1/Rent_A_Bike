@@ -1001,9 +1001,12 @@ textarea#comment::placeholder {
     text-align: center;
     margin: 0px auto;
 }
-
-.send_btn a {
-    width: 100%;
+.container_send{
+    margin: auto;
+    display: flex;
+}
+.send_btn  {
+    width: 30%;
     float: left;
     color: #ffffff;
     font-size: 18px;
@@ -1012,7 +1015,7 @@ textarea#comment::placeholder {
     border-radius: 10px;
 }
 
-.send_btn a:hover {
+.send_btn input:hover {
     color: #000;
     background-color: #ffffff;
 }

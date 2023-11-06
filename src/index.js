@@ -5,17 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-import { MongoClient } from 'mongodb';
+// import { MongoClient } from 'mongodb';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-async function solve() {
-  const mongoClient = new MongoClient('mongodb+srv://silviyageorgieva:abXT5JFL5KyBA1cd@rent-a-bike.wqngass.mongodb.net/?retryWrites=true&w=majority');
+// async function solve() {
+//   const mongoClient = new MongoClient('mongodb+srv://silviyageorgieva:abXT5JFL5KyBA1cd@rent-a-bike.wqngass.mongodb.net/?retryWrites=true&w=majority');
 
-  const data = await mongoClient.db().collection('rent-a-bike').find({}).toArray();
+//   const data = await mongoClient.db().collection('rent-a-bike').find({}).toArray();
 
-  console.log('!!!', data);
-}
+//   console.log('!!!', data);
+// }
 root.render(
   <BrowserRouter>
     <App />
