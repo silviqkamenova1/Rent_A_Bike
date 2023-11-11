@@ -1,24 +1,51 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useForm } from "../../hooks/useForm";
 
 export default function Login() {
+   // access the data which we gave through context provider
+   const  {onLoginSubmit} = useContext(AuthContext)
+
+   //adding initial values which we want to control
+   //giving to the hook handler in the end
+   // data which should fill iin in the begining
+   // and then we added in the form
+   const {values, changeHandler, onSubmit} = useForm({
+      email: '',
+      password: '',
+   }, onLoginSubmit)
    return (
       <div className="contact_section layout_padding">
          <div className="container">
             <div className="contact_main">
                <h1 className="request_text">Login</h1>
-               <form action="/action_page.php">
+               <form method="POST" onSubmit={onSubmit}>
                   <div className="form-group">
-                     <input type="text" className="email-bt" placeholder="Email" name="email" />
+                     <input 
+                     type="text" 
+                     className="email-bt" 
+                     placeholder="Email" 
+                     name="email"
+                     value={values.email} 
+                     onChange={changeHandler}
+                     />
                   </div>
                   <div className="form-group">
-                     <input type="text" className="email-bt" placeholder="Password" name="password" />
+                     <input 
+                     type="text" 
+                     className="email-bt" 
+                     placeholder="Password" 
+                     name="password" 
+                     value={values.password}
+                     onChange={changeHandler}
+                     />
                   </div>
 
-               </form>
                <div className="container_send">
-
                   <input className="send_btn" type="submit" value="Login" />
+
                </div>
+               </form>
             </div>
          </div>
       </div>
