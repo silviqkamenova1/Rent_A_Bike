@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Navigation() {
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated,userEmail } = useContext(AuthContext);
     return (
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,10 +45,10 @@ export default function Navigation() {
                         <ul>
                             {isAuthenticated && (
                                 <>
+                                    <li>Welcome, {userEmail}!</li>
                                     <li><Link className="nav-btns" to="/logout">Logout</Link></li>
                                     <li><Link to="/cycle/trolly"><img alt='' src="assets/images/trolly-icon.png" /></Link></li>
                                     <li><Link to="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></Link></li>
-
                                 </>
                             )}
                             {!isAuthenticated && (

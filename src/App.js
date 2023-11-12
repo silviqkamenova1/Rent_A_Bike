@@ -9,7 +9,6 @@ import { AuthContext } from './contexts/AuthContext';
 import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
 import AddBike from './components/AddBike/AddBike';
-import AboutStore from './components/AboutStore/AboutStore';
 import Customers from './components/Customer/Customers';
 import News from './components/News/News';
 import Contact from './components/Contact/Contact';
@@ -21,6 +20,7 @@ import './App.css';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Catalog from './components/Catalog/Catalog';
+import { Logout } from './components/Logout/Logout';
 
 export default function App() {
    const navigate = useNavigate();
@@ -47,23 +47,23 @@ export default function App() {
          const result = await authServices.login(data);
          setAuth(result);
 
-         navigate('/catalog');
+         navigate('/');
       } catch (error) {
          console.log('There is a problem');
       }
    };
 
    const onRegisterSubmit = async (values) => {
-      const { confirmPassword, ...registerData } = values;
+      const { repass, ...registerData } = values;
 
-      if (confirmPassword !== registerData.password) {
+      if (repass !== registerData.password) {
          return;
       };
 
       try {
          const result = await authServices.register(registerData);
          setAuth(result);
-         navigate('/catalog');
+         navigate('/');
       } catch (error) {
 
       }
@@ -103,7 +103,7 @@ export default function App() {
             <Routes>
                <Route path='/create' element={<AddBike onCerateBikeSubmit={onCerateBikeSubmit} />} />
                <Route path='/contact' element={<Contact />} />
-               {/* <Route path='/about' element = { <AboutStore />} /> */}
+               <Route path='/logout' element = { <Logout />} />
                <Route path='' element={<Customers />} />
                <Route path='/news' element={<News />} />
                <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit} />} />
