@@ -69,9 +69,15 @@ export default function App() {
       }
    };
 
+   const onLogout = async () => {
+      //await authServices.logout()
+      setAuth({})
+   }
+
    const context = {
       onLoginSubmit,
       onRegisterSubmit,
+      onLogout,
       userId: auth._id,
       token: auth.accessToken,
       userEmail: auth.email,
