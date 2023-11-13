@@ -2,18 +2,19 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
 
-import * as bikeService from './services/bikeService';
-import * as authServices from './services/authServices';
+import { bikeServiceFactory } from './services/bikeService';
+import { authServiceFactory } from './services/authServices';
 import { AuthContext } from './contexts/AuthContext';
+//import { useService } from './hooks/useService';
 
 import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
 import AddBike from './components/AddBike/AddBike';
 import Customers from './components/Customer/Customers';
 import News from './components/News/News';
-import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Copyright from './components/Copyright/Copyright';
+import Details from './components/Details/Details';
 
 
 import './App.css';
@@ -26,6 +27,8 @@ export default function App() {
    const navigate = useNavigate();
    const [bikes, setBikes] = useState([]);
    const [auth, setAuth] = useState({});
+   const bikeService = bikeServiceFactory(auth.accessToken)
+   const authService = authServiceFactory(auth.accessToken)
 
    useEffect(() => {
       bikeService.getAll()
@@ -44,7 +47,7 @@ export default function App() {
 
    const onLoginSubmit = async (data) => {
       try {
-         const result = await authServices.login(data);
+         const result = await authService.login(data);
          setAuth(result);
 
          navigate('/');
@@ -61,7 +64,7 @@ export default function App() {
       };
 
       try {
-         const result = await authServices.register(registerData);
+         const result = await authService.register(registerData);
          setAuth(result);
          navigate('/');
       } catch (error) {
@@ -70,7 +73,7 @@ export default function App() {
    };
 
    const onLogout = async () => {
-      //await authServices.logout()
+      await authService.logout()
       setAuth({})
    }
 
@@ -108,7 +111,6 @@ export default function App() {
             </div>
             <Routes>
                <Route path='/create' element={<AddBike onCerateBikeSubmit={onCerateBikeSubmit} />} />
-               <Route path='/contact' element={<Contact />} />
                <Route path='/logout' element = { <Logout />} />
                <Route path='' element={<Customers />} />
                <Route path='/news' element={<News />} />
@@ -117,6 +119,7 @@ export default function App() {
                <Route path='/news' element={<Footer />} />
                <Route path='/news' element={<Copyright />} />
                <Route path='/catalog' element={<Catalog bikes={bikes} />} />
+               <Route path='/catalog/:bikeId' element={<Details />} />
 
                {/* <Footer />
             <Copyright /> */}

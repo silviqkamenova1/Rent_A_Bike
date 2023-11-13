@@ -7,7 +7,7 @@ export default function AddBike ({
       frame: '',
       model: '',
       spokes: '',
-      sizes: '',
+      size: '',
       year: '',
       price: '',
       image: '',
@@ -22,17 +22,18 @@ export default function AddBike ({
             <div className="contact_main">
                <h1 className="request_text">Add Bike</h1>
                <form method="POST" onSubmit={onSubmit}>
-                  <div className="form-group">
-                     <input value={values.frame} onChange={changeHandler} type="text" className="email-bt" placeholder="Frame" name="frame" />
-                  </div>
+                  {/* to change the properties  */}
                   <div className="form-group">
                      <input value={values.model} onChange={changeHandler} type="text" className="email-bt" placeholder="Model" name="model" />
                   </div>
                   <div className="form-group">
-                     <input value={values.spokes} onChange={changeHandler} type="text" className="email-bt" placeholder="Spokes" name="spokes" />
+                     <input value={values.frame} onChange={changeHandler} type="text" className="email-bt" placeholder="Frame" name="frame" />
                   </div>
                   <div className="form-group">
-                     <input value={values.sizes} onChange={changeHandler} type="text" className="email-bt" placeholder="Sizes" name="sizes" />
+                     <input value={values.size} onChange={changeHandler} type="text" className="email-bt" placeholder="Size" name="size" />
+                  </div>
+                  <div className="form-group">
+                     <input value={values.spokes} onChange={changeHandler} type="text" className="email-bt" placeholder="Spokes" name="spokes" />
                   </div>
                   <div className="form-group">
                      <input value={values.year} onChange={changeHandler} type="text" className="email-bt" placeholder="Year" name="year" />

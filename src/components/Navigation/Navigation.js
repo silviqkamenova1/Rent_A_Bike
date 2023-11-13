@@ -29,16 +29,16 @@ export default function Navigation() {
                             <Link className="nav-link" to="/create">Add Bike</Link>
                         </li>
                     )}
-                    {!isAuthenticated && (
-                        <>
+                    {/* {!isAuthenticated && (
+                        <> */}
                             <li className="nav-item">
                                 <Link className="nav-link" to="/news">News</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact Us</Link>
-                            </li>
-                        </>
-                    )}
+                            </li> */}
+                        {/* </>
+                    )} */}
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                     <div className="login_menu">
