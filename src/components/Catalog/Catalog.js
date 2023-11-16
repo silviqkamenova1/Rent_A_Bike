@@ -6,7 +6,7 @@ export default function Catalog({
     bikes
 }) {
     return (
-        <div className="cycle_section layout_padding">
+        <div className="cycle_section layout_padding ">
             <div className="container">
                 <h1 className="cycle_taital">Our cycle</h1>
                 {bikes.map(x => <CatalogItem key={x._id} {...x}/>)}

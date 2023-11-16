@@ -9,8 +9,8 @@ export const CatalogItem = ({
 }) => {
 
     return (
-        <div className="cycle_section_2 layout_padding">
-            <div className="row">
+        <div className="cycle_section_2 ">
+            <div className="row" >
                 <div className="col-md-6">
                     <div className="box_main">
                         <h6 className="number_text">Best</h6>

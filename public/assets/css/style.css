@@ -1019,7 +1019,7 @@ textarea#comment::placeholder {
     color: #ffffff;
     border-radius: 100px;
     width: 30%;
-    padding: 10px 10px;
+    padding: 10px;
  
 }
 
@@ -1177,8 +1177,10 @@ textarea#comment::placeholder {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    
+    width: 80%;   
+}
+.catalog{
+    background-color: #325662;
 }
 
 

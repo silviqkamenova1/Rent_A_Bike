@@ -19,7 +19,7 @@ export default function Register() {
                     <form action="/action_page.php" method="POST" onSubmit={onSubmit}>
                         <div className="form-group">
                             <input
-                                type="text"
+                                type="username"
                                 className="email-bt"
                                 placeholder="Username"
                                 name="username"
@@ -39,7 +39,7 @@ export default function Register() {
                         </div>
                         <div className="form-group">
                             <input
-                                type="text"
+                                type="password"
                                 className="email-bt"
                                 placeholder="Password"
                                 name="password"
@@ -49,7 +49,7 @@ export default function Register() {
                         </div>
                         <div className="form-group">
                             <input
-                                type="text"
+                                type="password"
                                 className="email-bt"
                                 placeholder="Repeat Password"
                                 name="repass"

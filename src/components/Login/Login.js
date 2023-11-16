@@ -22,7 +22,7 @@ export default function Login() {
                <form method="POST" onSubmit={onSubmit}>
                   <div className="form-group">
                      <input 
-                     type="text" 
+                     type="email" 
                      className="email-bt" 
                      placeholder="Email" 
                      name="email"
@@ -32,7 +32,7 @@ export default function Login() {
                   </div>
                   <div className="form-group">
                      <input 
-                     type="text" 
+                     type="password" 
                      className="email-bt" 
                      placeholder="Password" 
                      name="password" 

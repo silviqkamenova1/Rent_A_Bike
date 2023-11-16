@@ -22,6 +22,7 @@ export default function Details() {
                   <div className="image_2"><img alt='' src={bike.image} /></div>
                </div>
                <div className="form-group">
+
                   <input type="text" className="email-bt" placeholder="Model" value={bike.model} />
                </div>
                <div className="form-group">
