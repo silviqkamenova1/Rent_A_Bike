@@ -30,9 +30,16 @@ export const bikeServiceFactory = (token) => {
     
     //     return result;
     // }
+
+    const deleteBike = (bikeId) => {
+        request.delete(`${baseUrl}/${bikeId}`)
+    };
+
+
     return {
         getAll,
         getOne,
-        create
+        create,
+        delete: deleteBike,
     }
 }

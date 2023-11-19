@@ -1,18 +1,31 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
 import { bikeServiceFactory } from "../../services/bikeService";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Details() {
+   const navigate = useNavigate();
+   const { userId } = useContext(AuthContext);
    const { bikeId } = useParams();
-   const [bike, setBike] = useState({})
-   const bikeService = bikeServiceFactory()
+   const [bike, setBike] = useState({});
+   const bikeService = bikeServiceFactory();
 
    useEffect(() => {
       bikeService.getOne(bikeId)
          .then(result => {
-            setBike(result)
-         })
-   }, [bikeId])
+            setBike(result);
+         });
+   }, [bikeId]);
+
+   const isOwner = bike._ownerId === userId ;
+
+   const onDelete = async () => {
+      await bikeService.delete(bike._id);
+      // TODO: delete from state
+      //navigate('/catalog')
+   }
+
    return (
       <div className="contact_section layout_padding">
          <div className="container">
@@ -45,9 +58,18 @@ export default function Details() {
                </div>
 
                <div className="container_send">
-                  <div className="send_btn"><a href="/send">EDIT</a></div>
-                  <div className="send_btn"><a href="/send">DELETE</a></div>
+                  {isOwner && (
+                     <>
+                     
+                        <div className="send_btn"><a href="/send">EDIT</a></div>
+                        <div className="send_btn"><a href="/send" onClick={onDelete}>DELETE</a></div>
+                     </>
+                  )}
+                  {!isOwner && (
+                     <>
                   <div className="send_btn"><a href="/send">RENT</a></div>
+                  </>
+                  )}
                </div>
             </div>
          </div>
