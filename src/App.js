@@ -22,6 +22,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Catalog from './components/Catalog/Catalog';
 import { Logout } from './components/Logout/Logout';
+import Edit from './components/Edit/Edit';
 
 export default function App() {
    const navigate = useNavigate();
@@ -75,6 +76,14 @@ export default function App() {
    const onLogout = async () => {
       await authService.logout()
       setAuth({})
+   };
+
+   const onGameEditSubmit = async ( values) => {
+      const result = await bikeService.edit(values._id, values);
+   
+      setBikes(state => state.map(x => x._id === values._id ? result : x))
+
+      navigate(`/catalog/${values._id}`)
    }
 
    const context = {
@@ -120,6 +129,7 @@ export default function App() {
                <Route path='/news' element={<Copyright />} />
                <Route path='/catalog' element={<Catalog bikes={bikes} />} />
                <Route path='/catalog/:bikeId' element={<Details />} />
+               <Route path='/catalog/:bikeId/edit' element={<Edit onGameEditSubmit={onGameEditSubmit}/>} />
 
                {/* <Footer />
             <Copyright /> */}

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { bikeServiceFactory } from "../../services/bikeService";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -61,8 +61,8 @@ export default function Details() {
                   {isOwner && (
                      <>
                      
-                        <div className="send_btn"><a href="/send">EDIT</a></div>
-                        <div className="send_btn"><a href="/send" onClick={onDelete}>DELETE</a></div>
+                        <div className="send_btn"><Link to={`/catalog/${bike._id}/edit`}>EDIT</Link></div>
+                        <div className="send_btn"><Link to="/send" onClick={onDelete}>DELETE</Link></div>
                      </>
                   )}
                   {!isOwner && (

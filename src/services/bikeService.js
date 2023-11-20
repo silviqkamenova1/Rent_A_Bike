@@ -14,7 +14,6 @@ export const bikeServiceFactory = (token) => {
     
      const getOne = async (bikeId) => {
         const result = await request.get(`${baseUrl}/${bikeId}`);
-        console.log(result);
     
         return result;
     };
@@ -30,9 +29,14 @@ export const bikeServiceFactory = (token) => {
     
     //     return result;
     // }
+    const edit = (bikeId, data) => {
+        const result = request.put(`${baseUrl}/${bikeId}`, data);
+        return result;
+    };
 
     const deleteBike = (bikeId) => {
-        request.delete(`${baseUrl}/${bikeId}`)
+        const result = request.delete(`${baseUrl}/${bikeId}`);
+        return result;
     };
 
 
@@ -40,6 +44,7 @@ export const bikeServiceFactory = (token) => {
         getAll,
         getOne,
         create,
+        edit,
         delete: deleteBike,
     }
 }

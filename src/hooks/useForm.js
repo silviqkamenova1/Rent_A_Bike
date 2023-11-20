@@ -12,6 +12,12 @@ export const useForm = (initalValues, onSubmitHandler) => {
                                     
     };
 
+    const changeValues = (newValues) => {
+
+
+        setValues(newValues)
+    }
+
     const onSubmit = (e) => {
         e.preventDefault()
         //onSubmitHandleer is calling through onSubmit function
@@ -22,6 +28,7 @@ export const useForm = (initalValues, onSubmitHandler) => {
     return {
         values,
         changeHandler,
+        changeValues,
         onSubmit
     }
 }
