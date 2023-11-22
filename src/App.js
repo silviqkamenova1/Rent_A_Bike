@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
 
 import { bikeServiceFactory } from './services/bikeService';
-import { authServiceFactory } from './services/authServices';
-import { AuthContext } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 //import { useService } from './hooks/useService';
 
 import Home from './components/Home/Home';
@@ -22,14 +21,12 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Catalog from './components/Catalog/Catalog';
 import { Logout } from './components/Logout/Logout';
-import Edit from './components/Edit/Edit';
+import Edit from './components/Details copy/Edit';
 
 export default function App() {
    const navigate = useNavigate();
    const [bikes, setBikes] = useState([]);
-   const [auth, setAuth] = useState({});
-   const bikeService = bikeServiceFactory(auth.accessToken)
-   const authService = authServiceFactory(auth.accessToken)
+   const bikeService = bikeServiceFactory()//(auth.accessToken)
 
    useEffect(() => {
       bikeService.getAll()
@@ -46,38 +43,6 @@ export default function App() {
       navigate('/catalog');
    };
 
-   const onLoginSubmit = async (data) => {
-      try {
-         const result = await authService.login(data);
-         setAuth(result);
-
-         navigate('/');
-      } catch (error) {
-         console.log('There is a problem');
-      }
-   };
-
-   const onRegisterSubmit = async (values) => {
-      const { repass, ...registerData } = values;
-
-      if (repass !== registerData.password) {
-         return;
-      };
-
-      try {
-         const result = await authService.register(registerData);
-         setAuth(result);
-         navigate('/');
-      } catch (error) {
-
-      }
-   };
-
-   const onLogout = async () => {
-      await authService.logout()
-      setAuth({})
-   };
-
    const onGameEditSubmit = async ( values) => {
       const result = await bikeService.edit(values._id, values);
    
@@ -86,15 +51,7 @@ export default function App() {
       navigate(`/catalog/${values._id}`)
    }
 
-   const context = {
-      onLoginSubmit,
-      onRegisterSubmit,
-      onLogout,
-      userId: auth._id,
-      token: auth.accessToken,
-      userEmail: auth.email,
-      isAuthenticated: !!auth.accessToken //double negative
-   };
+
    // function openNav() {
    //    document.getElementById("mySidenav").style.width = "250px";
    //    document.getElementById("main").style.marginLeft = "250px";
@@ -110,7 +67,7 @@ export default function App() {
    //      $("#navbarSupportedContent").toggleClass("nav-normal")
    //  })x
    return (
-      <AuthContext.Provider value={context}>
+      <AuthProvider>
          <body>
             <div className="header_section header_bg">
                <Navigation />
@@ -135,7 +92,7 @@ export default function App() {
             <Copyright /> */}
             </Routes>
          </body>
-      </AuthContext.Provider>
+      </AuthProvider>
    );
 }
 

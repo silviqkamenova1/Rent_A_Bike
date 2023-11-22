@@ -5,7 +5,7 @@ import { bikeServiceFactory } from "../../services/bikeService";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Details() {
-   const navigate = useNavigate();
+   //const navigate = useNavigate();
    const { userId } = useContext(AuthContext);
    const { bikeId } = useParams();
    const [bike, setBike] = useState({});

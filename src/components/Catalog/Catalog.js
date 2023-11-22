@@ -1,6 +1,6 @@
 import React from "react";
 import { CatalogItem } from "./CatalogItem/CatalogItem";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 export default function Catalog({
     bikes
