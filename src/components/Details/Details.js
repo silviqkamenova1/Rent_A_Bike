@@ -1,15 +1,16 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { bikeServiceFactory } from "../../services/bikeService";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
+import { useService } from "../../hooks/useService";
 
 export default function Details() {
    //const navigate = useNavigate();
-   const { userId } = useContext(AuthContext);
+   const { userId, isAuthenticated } = useAuthContext();
    const { bikeId } = useParams();
    const [bike, setBike] = useState({});
-   const bikeService = bikeServiceFactory();
+   const bikeService = useService(bikeServiceFactory);
 
    useEffect(() => {
       bikeService.getOne(bikeId)
@@ -18,13 +19,13 @@ export default function Details() {
          });
    }, [bikeId]);
 
-   const isOwner = bike._ownerId === userId ;
+   const isOwner = bike._ownerId === userId;
 
    const onDelete = async () => {
       await bikeService.delete(bike._id);
       // TODO: delete from state
       //navigate('/catalog')
-   }
+   };
 
    return (
       <div className="contact_section layout_padding">
@@ -60,15 +61,15 @@ export default function Details() {
                <div className="container_send">
                   {isOwner && (
                      <>
-                     
+
                         <div className="send_btn"><Link to={`/catalog/${bike._id}/edit`}>EDIT</Link></div>
                         <div className="send_btn"><Link to="/send" onClick={onDelete}>DELETE</Link></div>
                      </>
                   )}
-                  {!isOwner && (
-                     <>
-                  <div className="send_btn"><a href="/send">RENT</a></div>
-                  </>
+                  {isAuthenticated && (
+
+                     <div className="send_btn"><a href="/send">RENT</a></div>
+
                   )}
                </div>
             </div>

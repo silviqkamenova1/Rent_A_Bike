@@ -20,6 +20,8 @@ export const useForm = (initalValues, onSubmitHandler) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        //when submit set defaults values
+        setValues(initalValues)
         //onSubmitHandleer is calling through onSubmit function
         onSubmitHandler(values)
     }

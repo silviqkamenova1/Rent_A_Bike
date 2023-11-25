@@ -80,7 +80,7 @@ export default function App() {
                <Route path='/logout' element = { <Logout />} />
                <Route path='' element={<Customers />} />
                <Route path='/news' element={<News />} />
-               <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit} />} />
+               <Route path='/login' element={<Login />} />
                <Route path='/register' element={<Register />} />
                <Route path='/news' element={<Footer />} />
                <Route path='/news' element={<Copyright />} />

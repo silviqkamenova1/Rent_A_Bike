@@ -1,17 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
 import { authServiceFactory } from '../services/authServices';
+import { useLocalStorage } from "../hooks/useLocaleStorage";
 
-
+//the context
 export const AuthContext = createContext();
 
+//component who wrapped and submit the provider and all functionality
 export const AuthProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
-    const [auth, setAuth] = useState({});
+    const [auth, setAuth] = useLocalStorage('auth', {});
     const authService = authServiceFactory(auth.accessToken)
 
     const onLoginSubmit = async (data) => {
@@ -37,7 +39,7 @@ export const AuthProvider = ({
            setAuth(result);
            navigate('/');
         } catch (error) {
-  
+            console.log('There is a problem');
         }
      };
 
@@ -63,4 +65,11 @@ export const AuthProvider = ({
             </AuthContext.Provider>
         </>
     )
+}
+
+//hook which gave us easier access to the context
+export const useAuthContext = () => {
+    const context = useContext(AuthContext);
+
+    return context;
 }

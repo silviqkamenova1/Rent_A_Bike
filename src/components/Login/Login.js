@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 
 export default function Login() {
    // access the data which we gave through context provider
-   const  {onLoginSubmit} = useContext(AuthContext)
+   const  { onLoginSubmit } = useAuthContext();
 
    //adding initial values which we want to control
    //giving to the hook handler in the end
