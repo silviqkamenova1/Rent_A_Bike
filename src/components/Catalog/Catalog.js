@@ -1,10 +1,8 @@
-import React from "react";
+import { useBikeContext } from "../../contexts/BikeContext";
 import { CatalogItem } from "./CatalogItem/CatalogItem";
-//import { Link } from "react-router-dom";
 
-export default function Catalog({
-    bikes
-}) {
+export default function Catalog() {
+    const { bikes } = useBikeContext()
     return (
         <div className="cycle_section layout_padding ">
             <div className="container">

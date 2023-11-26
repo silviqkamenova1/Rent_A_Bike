@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { bikeServiceFactory } from "../../services/bikeService";
+import { useBikeContext } from "../../contexts/BikeContext";
 
 
-export default function Edit({
-   onGameEditSubmit,
-}) {
-   const {bikeId} = useParams()// use it to make a request with useEffect
+export default function Edit() {
+   const { onGameEditSubmit } = useBikeContext()
+   const { bikeId } = useParams()
    const bikeService = useService(bikeServiceFactory)
    const { values, changeHandler, onSubmit, changeValues } = useForm({
       _id:'', 

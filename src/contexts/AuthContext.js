@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -14,41 +14,41 @@ export const AuthProvider = ({
 }) => {
     const navigate = useNavigate();
     const [auth, setAuth] = useLocalStorage('auth', {});
-    const authService = authServiceFactory(auth.accessToken)
+    const authService = authServiceFactory(auth.accessToken);
 
     const onLoginSubmit = async (data) => {
         try {
-           const result = await authService.login(data);
-           setAuth(result);
-  
-           navigate('/');
-        } catch (error) {
-           console.log('There is a problem');
-        }
-     };
+            const result = await authService.login(data);
+            setAuth(result);
 
-    const onRegisterSubmit = async (values) => {
-        const { repass, ...registerData } = values;
-  
-        if (repass !== registerData.password) {
-           return;
-        };
-  
-        try {
-           const result = await authService.register(registerData);
-           setAuth(result);
-           navigate('/');
+            navigate('/');
         } catch (error) {
             console.log('There is a problem');
         }
-     };
+    };
+
+    const onRegisterSubmit = async (values) => {
+        const { repass, ...registerData } = values;
+
+        if (repass !== registerData.password) {
+            return;
+        };
+
+        try {
+            const result = await authService.register(registerData);
+            setAuth(result);
+            navigate('/');
+        } catch (error) {
+            console.log('There is a problem');
+        }
+    };
 
     const onLogout = async () => {
-        await authService.logout()
-        setAuth({})
-     };
+        await authService.logout();
+        setAuth({});
+    };
 
-    const context = {
+    const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
@@ -56,14 +56,13 @@ export const AuthProvider = ({
         token: auth.accessToken,
         userEmail: auth.email,
         isAuthenticated: !!auth.accessToken //double negative
-     };
+    };
 
     return (
-        <>
-            <AuthContext.Provider value={context}>
-                {children}
-            </AuthContext.Provider>
-        </>
+        <AuthContext.Provider value={contextValues}>
+            {children}
+        </AuthContext.Provider>
+     
     )
 }
 
@@ -72,4 +71,4 @@ export const useAuthContext = () => {
     const context = useContext(AuthContext);
 
     return context;
-}
+};
