@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../Catalog.css';
 
 export const CatalogItem = ({
     _id,
@@ -9,7 +10,7 @@ export const CatalogItem = ({
 }) => {
 
     return (
-        <div className="cycle_section_2 ">
+        <div className="cycle_section_2 catalog-border">
             <div className="row" >
                 <div className="col-md-6">
                     <div className="box_main">

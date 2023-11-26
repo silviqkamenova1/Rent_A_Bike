@@ -4,10 +4,12 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { bikeServiceFactory } from "../../services/bikeService";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useService } from "../../hooks/useService";
+import { useBikeContext } from "../../contexts/BikeContext";
 
 export default function Details() {
-   //const navigate = useNavigate();
+   const navigate = useNavigate();
    const { userId, isAuthenticated } = useAuthContext();
+   const { deleteBike } = useBikeContext()
    const { bikeId } = useParams();
    const [bike, setBike] = useState({});
    const bikeService = useService(bikeServiceFactory);
@@ -22,9 +24,16 @@ export default function Details() {
    const isOwner = bike._ownerId === userId;
 
    const onDelete = async () => {
-      await bikeService.delete(bike._id);
-      // TODO: delete from state
-      //navigate('/catalog')
+      //eslint-disable-next-line no-restricted-globals
+      const result = confirm(`Are you sure you want to delete ${bike.frame} ?`)
+       
+      if(result) {
+         await bikeService.delete(bike._id);
+
+         deleteBike(bike._id)
+         
+         navigate('/catalog')
+      }
    };
 
    return (
@@ -34,10 +43,6 @@ export default function Details() {
                <h1 className="request_text">DETAILS</h1>
                <div className="box_main form_pic">
                   <div className="image_2"><img alt='' src={bike.image} /></div>
-               </div>
-               <div className="form-group">
-
-                  <input type="text" className="email-bt" placeholder="Model" value={bike.model} />
                </div>
                <div className="form-group">
                   <input type="text" className="email-bt" placeholder="Frame" value={bike.frame} />

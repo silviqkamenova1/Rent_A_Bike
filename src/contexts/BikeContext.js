@@ -1,6 +1,8 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { bikeServiceFactory } from '../services/bikeService'
+import { useLocalStorage } from '../hooks/useLocaleStorage';
+import { authServiceFactory } from '../services/authServices';
 
 export const BikeContext = createContext();
 
@@ -9,7 +11,22 @@ export const BikeProvider = ({
 }) => {
     const navigate = useNavigate();
     const [bikes, setBikes] = useState([]);
-    const bikeService = bikeServiceFactory();//(auth.accessToken)
+    const [auth, setAuth] = useLocalStorage('auth', {});
+    const authService = authServiceFactory(auth.accessToken);
+
+
+    const bikeService = bikeServiceFactory(auth.accessToken);
+
+    const onAuthorisedCreate = async (data) => {
+        try {
+            const result = await authService.login(data);
+            setAuth(result);
+
+            navigate('/');
+        } catch (error) {
+            console.log('There is a problem');
+        }
+    };
 
     useEffect(() => {
         bikeService.getAll()
@@ -34,10 +51,20 @@ export const BikeProvider = ({
         navigate(`/catalog/${values._id}`);
      };
 
+     const deleteBike = (bikeId) => {
+        setBikes(state => state.filter(b => b._id !== bikeId))
+     }
+
+     const getBike = (bikeId) =>  {
+        return bikes.find(bike => bike._id == bikeId)
+     }
+
      const contextValues = {
         bikes,
         onCerateBikeSubmit,
         onBikeEditSubmit,
+        deleteBike,
+        getBike
      }
 
     return (

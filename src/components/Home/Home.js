@@ -21,36 +21,7 @@ export default function Banner() {
                             </div>
                         </div>
                     </div>
-                    <div className="carousel-item">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-7">
-                                    <div className="best_text">Best</div>
-                                    <div className="image_1"><img alt='' src="assets/images/img-1.png" /></div>
-                                </div>
-                                <div className="col-md-5">
-                                    <h1 className="banner_taital">New Model Cycle</h1>
-                                    <p className="banner_text">It is a long established fact that a reader will be distracted by the readable content </p>
-                                    <div className="contact_bt"><a href="contact.html">Shop Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-7">
-                                    <div className="best_text">Best</div>
-                                    <div className="image_1"><img alt='' src="assets/images/img-1.png" /></div>
-                                </div>
-                                <div className="col-md-5">
-                                    <h1 className="banner_taital">New Model Cycle</h1>
-                                    <p className="banner_text">It is a long established fact that a reader will be distracted by the readable content </p>
-                                    <div className="contact_bt"><a href="contact.html">Shop Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>

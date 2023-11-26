@@ -1,10 +1,8 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { useNavigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-import { bikeServiceFactory } from './services/bikeService';
-import { authServiceFactory } from './services/authServices';
-import { AuthContext, AuthProvider } from './contexts/AuthContext';
+
+import { AuthProvider } from './contexts/AuthContext';
 //import { useService } from './hooks/useService';
 
 import Home from './components/Home/Home';
@@ -25,6 +23,7 @@ import { Logout } from './components/Logout/Logout';
 import Edit from './components/Edit/Edit';
 import { RoutGuard } from './components/common/RouteGuard';
 import { BikeProvider } from './contexts/BikeContext';
+import { GameOwner } from './components/common/BikeOwner';
 
 export default function App() {
 
@@ -40,7 +39,7 @@ export default function App() {
                   </Routes>
                </div>
                <Routes>
-                  <Route path='' element={<Customers />} />
+                  {/* <Route path='' element={<Customers />} /> */}
                   <Route path='/news' element={<News />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/register' element={<Register />} />
@@ -51,14 +50,25 @@ export default function App() {
                   <Route element={<RoutGuard />}>
 
                      <Route path='/create' element={<AddBike />} />
-                     <Route path='/catalog/:bikeId/edit' element={<Edit />} />
+                     <Route path='/catalog/:bikeId/edit' element={
+                        <GameOwner>
+                           <Edit />
+                        </GameOwner>
+                     } />
                      <Route path='/logout' element={<Logout />} />
 
                   </Route>
                   {/* <Footer />
-            <Copyright /> */}
+                  <Copyright /> */}
                </Routes>
             </body>
+            <footer>
+               <div className="copyright_section">
+                  <div className="container">
+                     <p className="copyright_text">Copyright 2019 All Right Reserved By Silviya Georgieva.<a href="https://html.design"> Free  html Templates</a></p>
+                  </div>
+               </div>
+            </footer>
          </BikeProvider>
       </AuthProvider>
    );

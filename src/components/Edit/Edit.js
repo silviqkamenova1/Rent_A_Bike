@@ -8,8 +8,8 @@ import { useBikeContext } from "../../contexts/BikeContext";
 
 
 export default function Edit() {
-   const { onGameEditSubmit } = useBikeContext()
-   const { bikeId } = useParams()
+   const { onBikeEditSubmit } = useBikeContext()
+   const { bikeId } = useParams()// use it to make a request with useEffect
    const bikeService = useService(bikeServiceFactory)
    const { values, changeHandler, onSubmit, changeValues } = useForm({
       _id:'', 
@@ -20,7 +20,7 @@ export default function Edit() {
       price: '',
       image: '',
       description: '',
-   }, onGameEditSubmit);
+   }, onBikeEditSubmit);
 
    useEffect(() => {
       bikeService.getOne(bikeId)
