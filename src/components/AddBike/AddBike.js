@@ -5,7 +5,7 @@ export default function AddBike ()  {
    const { onCerateBikeSubmit } = useBikeContext()
    const {values, changeHandler, onSubmit} = useForm({
       frame: '',
-      model: '',
+      // model: '',
       spokes: '',
       size: '',
       year: '',
@@ -23,9 +23,9 @@ export default function AddBike ()  {
                <h1 className="request_text">Add Bike</h1>
                <form method="POST" onSubmit={onSubmit}>
                   {/* to change the properties  */}
-                  <div className="form-group">
+                  {/* <div className="form-group">
                      <input value={values.model} onChange={changeHandler} type="text" className="email-bt" placeholder="Model" name="model" />
-                  </div>
+                  </div> */}
                   <div className="form-group">
                      <input value={values.frame} onChange={changeHandler} type="text" className="email-bt" placeholder="Frame" name="frame" />
                   </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import "./Navigation.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -13,7 +13,7 @@ export default function Navigation() {
                 <span className="navbar-toggler-icon"></span>
             </button> */}
 
-            <div className="collapse navbar-collapse" >
+            <div className="collapse navbar-collapse " >
                 <ul className="navbar-nav mr-auto ">
                     <li className="nav-item active ">
                         <Link className="nav-link" to="/">Home</Link>
@@ -45,8 +45,8 @@ export default function Navigation() {
                         <ul>
                             {isAuthenticated && (
                                 <>
-                                    <li>Welcome, {userEmail}!</li>
-                                    <li><Link className="nav-btns" to="/logout">Logout</Link></li>
+                                    <li className="welcomeBar">Welcome, {userEmail}!</li>
+                                    <li><Link  to="/logout">Logout</Link></li>
                                     <li><Link to="/cycle/trolly"><img alt='' src="assets/images/trolly-icon.png" /></Link></li>
                                     <li><Link to="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></Link></li>
                                 </>
