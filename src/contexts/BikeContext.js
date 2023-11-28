@@ -56,7 +56,7 @@ export const BikeProvider = ({
      }
 
      const getBike = (bikeId) =>  {
-        return bikes.find(bike => bike._id == bikeId)
+        return bikes.find(bike => bike._id === bikeId)
      }
 
      const contextValues = {

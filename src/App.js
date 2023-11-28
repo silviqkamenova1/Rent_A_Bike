@@ -8,7 +8,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
 import AddBike from './components/AddBike/AddBike';
-import Customers from './components/Customer/Customers';
+//import Customers from './components/Customer/Customers';
 import News from './components/News/News';
 import Footer from './components/Footer/Footer';
 import Copyright from './components/Copyright/Copyright';

@@ -19,7 +19,7 @@ export const CatalogItem = ({
                     </div>
                 </div>
                 <div className="col-md-6">
-                    <h1 className="cycles_text">{frame}</h1>
+                    <h1 className="cycles_text" id="frame">{frame}</h1>
                     <p className="lorem_text">{description}</p>
                     <div className="btn_main">
                         <div className="buy_bt"><Link to={`/catalog/${_id}`}>Details</Link></div>
