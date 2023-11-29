@@ -1,4 +1,5 @@
 .catalog-border{
+    
     border-style: solid;
     padding: 50px;
     margin: 10px;
@@ -6,4 +7,8 @@
     border-radius: 30px;
     border-color: #325662;
     background-image: 'https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/mountain-photography/Mountain-photography_fb-img_1200x800.jpg';
+}
+.pic{
+    border-radius: 20%;
+    padding-top: 30px;
 }

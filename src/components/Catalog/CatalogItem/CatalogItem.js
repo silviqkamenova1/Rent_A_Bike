@@ -6,7 +6,8 @@ export const CatalogItem = ({
     frame,
     price,
     description,
-    image
+    image,
+    size,
 }) => {
 
     return (
@@ -14,8 +15,8 @@ export const CatalogItem = ({
             <div className="row" >
                 <div className="col-md-6">
                     <div className="box_main">
-                        <h6 className="number_text">Best</h6>
-                        <div className="image_2"><img alt='' src={image} /></div>
+                        <h6 className="number_text">{size}</h6>
+                        <div className="image_2 " ><img className="pic" alt='' src={image} /></div>
                     </div>
                 </div>
                 <div className="col-md-6">

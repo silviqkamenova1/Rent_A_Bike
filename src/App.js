@@ -31,7 +31,7 @@ export default function App() {
    return (
       <AuthProvider >
          <BikeProvider>
-            <body>
+            <body id='body-bg'>
                <div className="header_section header_bg">
                   <Navigation />
                   <Routes>

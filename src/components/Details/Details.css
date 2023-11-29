@@ -1,0 +1,96 @@
+#details-description {
+    width: 95%;
+    margin: 30px auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .bold{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif
+   
+  }
+  .details-border{
+    border-style:solid;
+    border-radius: 20%;
+    border-color: white;
+    padding: 20px;
+  }
+  .dtls{
+    padding: 20px;
+  }
+  .details-p{
+    font-size: 25px;
+    color: white;
+  }
+
+
+  .bikePic {
+    float: left;
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+    border-radius: 10%;
+    box-shadow: 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .frame{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+
+  }
+
+  /* #detailsPage {
+    display: grid;
+    justify-items: center;
+  }
+  
+  .details {
+    display: block;
+    position: relative;
+    width: 700px;
+    height: 350px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #cf370991;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    justify-content: center;
+  }
+  
+  .animalPic img {
+    border-radius: 12px 12px 12px 12px;
+    height: 100%;
+  }
+  
+  .animalInfo {
+    padding-left: 10px;
+    padding-top: -10px;
+  }
+  
+  .animalInfo h1 {
+    color: black;
+    font-weight: bolder;
+    font-size: 28px;
+  }
+  
+  .animalInfo h3 {
+    margin: 8px 0 47px 18px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+  }
+  
+  .animalInfo h4 {
+    margin: 8px 0 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 0.1em;
+  } */

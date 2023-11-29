@@ -1,6 +1,9 @@
+import './Register.css'
+
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
+import { Link } from "react-router-dom";
 
 export default function Register() {
     const { onRegisterSubmit } = useContext(AuthContext);
@@ -57,6 +60,9 @@ export default function Register() {
                                 onChange={changeHandler}
                             />
                         </div>
+                        <p class="field">
+                            <span>If you have profile click <Link to="/login" className='here'>here</Link></span>
+                        </p>
                         <div className="container_send">
                             <input className="send_btn" type="submit" value="Register" />
                         </div>
