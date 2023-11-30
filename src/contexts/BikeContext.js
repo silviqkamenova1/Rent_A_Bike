@@ -44,8 +44,7 @@ export const BikeProvider = ({
      };
   
      const onBikeEditSubmit = async (values) => {
-        const result = await bikeService.edit(values._id, values);
-  
+        const result = await bikeService.edit(values._id, values);  
         setBikes(state => state.map(x => x._id === values._id ? result : x));
   
         navigate(`/catalog/${values._id}`);

@@ -14,6 +14,7 @@ export default function Details() {
    const { deleteBike } = useBikeContext();
    const { bikeId } = useParams();
    const [bike, setBike] = useState({});
+   const [likeBtn, setLikeBtn] = useState(false)
    const bikeService = useService(bikeServiceFactory);
 
    useEffect(() => {
@@ -31,12 +32,15 @@ export default function Details() {
 
       if (result) {
          await bikeService.delete(bike._id);
-
          deleteBike(bike._id);
-
          navigate('/catalog');
       }
    };
+
+   const onRent = async () => {
+      setLikeBtn(!likeBtn)
+      document.getElementById('rentBtn').textContent = "You already rent this bike!"
+   }
 
    return (
       <div className="contact_section layout_padding">
@@ -52,9 +56,10 @@ export default function Details() {
                   </div>
 
                   <div id="details-description">
+                     <p className='details-p'><strong className='bold'>Type:</strong> {bike.type}</p>
                      <p className='details-p'><strong className='bold'>Size:</strong> {bike.size}</p>
                      <p className='details-p'><strong className='bold'>Year:</strong> {bike.year}</p>
-                     <p className='details-p'><strong className='bold'>Price:</strong> {bike.price}</p>
+                     <p className='details-p'><strong className='bold'>Price:</strong> <strong>$</strong> {bike.price}</p>
                      <p className='details-p'><strong className='bold'>Description:</strong> {bike.description}</p>
                   </div>
                   {/* <div className="form-group">
@@ -78,12 +83,12 @@ export default function Details() {
                         <>
 
                            <div className="send_btn"><Link to={`/catalog/${bike._id}/edit`}>EDIT</Link></div>
-                           <div className="send_btn"><Link to="/send" onClick={onDelete}>DELETE</Link></div>
+                           <div className="send_btn"><Link to="javascript:void(0)" onClick={onDelete}>DELETE</Link></div>
                         </>
                      )}
                      {(isAuthenticated && !isOwner) && (
 
-                        <div className="send_btn"><a href="/send">RENT</a></div>
+                        <div className="send_btn"><Link id='rentBtn' href="javascript:void(0)" onClick={onRent}>RENT</Link></div>
 
                      )}
                   </div>

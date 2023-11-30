@@ -13,8 +13,8 @@ export default function Edit() {
    const bikeService = useService(bikeServiceFactory)
    const { values, changeHandler, onSubmit, changeValues } = useForm({
       _id:'', 
-      model: '',
       frame: '',
+      type: '',
       size: '',
       year: '',
       price: '',
@@ -39,11 +39,11 @@ export default function Edit() {
                </div> */}
                <form action="POST" onSubmit={onSubmit}>
                   <div className="form-group">
-
-                     <input type="text" className="email-bt" placeholder="Model" name="model" value={values.model} onChange={changeHandler} />
+                     <input type="text" className="email-bt" placeholder="Frame" name="frame" value={values.frame} onChange={changeHandler} />
                   </div>
                   <div className="form-group">
-                     <input type="text" className="email-bt" placeholder="Frame" name="frame" value={values.frame} onChange={changeHandler} />
+
+                     <input type="text" className="email-bt" placeholder="Type" name="type" value={values.type} onChange={changeHandler} />
                   </div>
                   <div className="form-group">
                      <input type="text" className="email-bt" placeholder="Size" name="size" value={values.size} onChange={changeHandler} />

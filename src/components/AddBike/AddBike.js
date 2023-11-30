@@ -1,12 +1,14 @@
 import { useBikeContext } from "../../contexts/BikeContext";
 import { useForm } from "../../hooks/useForm";
 
+import './AddBike.css'
+
 export default function AddBike ()  {
    const { onCerateBikeSubmit } = useBikeContext()
    const {values, changeHandler, onSubmit} = useForm({
       frame: '',
-      // model: '',
-      spokes: '',
+      type: '',
+      // spokes: '',
       size: '',
       year: '',
       price: '',
@@ -23,18 +25,18 @@ export default function AddBike ()  {
                <h1 className="request_text">Add Bike</h1>
                <form method="POST" onSubmit={onSubmit}>
                   {/* to change the properties  */}
-                  {/* <div className="form-group">
-                     <input value={values.model} onChange={changeHandler} type="text" className="email-bt" placeholder="Model" name="model" />
-                  </div> */}
                   <div className="form-group">
                      <input value={values.frame} onChange={changeHandler} type="text" className="email-bt" placeholder="Frame" name="frame" />
                   </div>
                   <div className="form-group">
-                     <input value={values.size} onChange={changeHandler} type="text" className="email-bt" placeholder="Size" name="size" />
+                     <input value={values.type} onChange={changeHandler} type="text" className="email-bt" placeholder="Type" name="type" />
                   </div>
                   <div className="form-group">
-                     <input value={values.spokes} onChange={changeHandler} type="text" className="email-bt" placeholder="Spokes" name="spokes" />
+                     <input value={values.size} onChange={changeHandler} type="text" className="email-bt" placeholder="Size" name="size" />
                   </div>
+                  {/* <div className="form-group">
+                     <input value={values.spokes} onChange={changeHandler} type="text" className="email-bt" placeholder="Spokes" name="spokes" />
+                  </div> */}
                   <div className="form-group">
                      <input value={values.year} onChange={changeHandler} type="text" className="email-bt" placeholder="Year" name="year" />
                   </div>

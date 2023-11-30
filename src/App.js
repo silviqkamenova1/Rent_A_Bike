@@ -24,6 +24,7 @@ import Edit from './components/Edit/Edit';
 import { RoutGuard } from './components/common/RouteGuard';
 import { BikeProvider } from './contexts/BikeContext';
 import { GameOwner } from './components/common/BikeOwner';
+import ShoppingCart from './components/Trolley/Trolley';
 
 export default function App() {
 
@@ -45,6 +46,7 @@ export default function App() {
                   <Route path='/register' element={<Register />} />
                   <Route path='/news' element={<Footer />} />
                   <Route path='/news' element={<Copyright />} />
+                  <Route path='/trolley' element={<ShoppingCart />} />
                   <Route path='/catalog' element={<Catalog />} />
                   <Route path='/catalog/:bikeId' element={<Details />} />
                   <Route element={<RoutGuard />}>
@@ -62,6 +64,7 @@ export default function App() {
                   <Copyright /> */}
                </Routes>
             </body>
+            
             <footer>
                <div className="copyright_section">
                   <div className="container">
