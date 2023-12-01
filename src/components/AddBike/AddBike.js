@@ -8,7 +8,6 @@ export default function AddBike ()  {
    const {values, changeHandler, onSubmit} = useForm({
       frame: '',
       type: '',
-      // spokes: '',
       size: '',
       year: '',
       price: '',
@@ -24,7 +23,7 @@ export default function AddBike ()  {
             <div className="contact_main">
                <h1 className="request_text">Add Bike</h1>
                <form method="POST" onSubmit={onSubmit}>
-                  {/* to change the properties  */}
+                
                   <div className="form-group">
                      <input value={values.frame} onChange={changeHandler} type="text" className="email-bt" placeholder="Frame" name="frame" />
                   </div>

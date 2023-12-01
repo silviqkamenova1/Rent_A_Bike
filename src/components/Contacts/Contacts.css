@@ -1,0 +1,12 @@
+.padding_0 {
+    padding: 20px;
+    padding-bottom: 50px;
+    
+}
+@media (max-width: 991.98px) {
+    .navbar-expand-lg > .container,
+    .navbar-expand-lg > .container-fluid {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  } 

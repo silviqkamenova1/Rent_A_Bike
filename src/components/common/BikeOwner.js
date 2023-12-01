@@ -3,7 +3,7 @@ import { Navigate, Outlet, useParams } from "react-router-dom";
 import { useBikeContext } from "../../contexts/BikeContext";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-export const GameOwner = ({
+export const BikeOwner = ({
     children,
 }) => {
     const { bikeId } = useParams()

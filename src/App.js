@@ -10,8 +10,8 @@ import Navigation from './components/Navigation/Navigation';
 import AddBike from './components/AddBike/AddBike';
 //import Customers from './components/Customer/Customers';
 import News from './components/News/News';
-import Footer from './components/Footer/Footer';
-import Copyright from './components/Copyright/Copyright';
+import Contacts from './components/Contacts/Contacts';
+
 import Details from './components/Details/Details';
 
 
@@ -23,7 +23,7 @@ import { Logout } from './components/Logout/Logout';
 import Edit from './components/Edit/Edit';
 import { RoutGuard } from './components/common/RouteGuard';
 import { BikeProvider } from './contexts/BikeContext';
-import { GameOwner } from './components/common/BikeOwner';
+import { BikeOwner } from './components/common/BikeOwner';
 import ShoppingCart from './components/Trolley/Trolley';
 
 export default function App() {
@@ -44,8 +44,7 @@ export default function App() {
                   <Route path='/news' element={<News />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/register' element={<Register />} />
-                  <Route path='/news' element={<Footer />} />
-                  <Route path='/news' element={<Copyright />} />
+                  <Route path='/contacts' element={<Contacts />} />
                   <Route path='/trolley' element={<ShoppingCart />} />
                   <Route path='/catalog' element={<Catalog />} />
                   <Route path='/catalog/:bikeId' element={<Details />} />
@@ -53,9 +52,9 @@ export default function App() {
 
                      <Route path='/create' element={<AddBike />} />
                      <Route path='/catalog/:bikeId/edit' element={
-                        <GameOwner>
+                        <BikeOwner>
                            <Edit />
-                        </GameOwner>
+                        </BikeOwner>
                      } />
                      <Route path='/logout' element={<Logout />} />
 
@@ -64,7 +63,7 @@ export default function App() {
                   <Copyright /> */}
                </Routes>
             </body>
-            
+           
             <footer>
                <div className="copyright_section">
                   <div className="container">

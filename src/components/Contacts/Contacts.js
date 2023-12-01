@@ -1,6 +1,7 @@
 import React from "react";
+import './Contacts.css'
 
-export default function Footer() {
+export default function Contacts() {
     return(
         <div className="footer_section layout_padding">
         <div className="container-fluid">

@@ -23,12 +23,7 @@ export const bikeServiceFactory = (token) => {
        console.log(result);
        return result;
     };
-    
-    //  const addComment = async (gameId, data) => {
-    //     const result = await request.post(`${baseUrl}/${gameId}/comments`, data);
-    
-    //     return result;
-    // }
+
     const edit = (bikeId, data) => {
         const result = request.put(`${baseUrl}/${bikeId}`, data);
         return result;
