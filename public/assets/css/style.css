@@ -1060,7 +1060,7 @@ textarea#comment::placeholder {
     border: 0px;
 }
 
-.subscribe_bt {
+/* .subscribe_bt {
     width: 180px;
     float: left;
     margin-top: 15px;
@@ -1078,7 +1078,7 @@ textarea#comment::placeholder {
 .subscribe_bt a:hover{
     color: #9e9c9c;
     background-color: #ffffff;
-}
+} */
 
 
 
@@ -1182,7 +1182,13 @@ textarea#comment::placeholder {
 .catalog{
     background-color: #325662;
 }
-
+/* .catalog-border{
+    border-style: solid;
+    padding-right: 50px;
+    border-radius: 30px;
+    border-color: black;
+    background-image: 'https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/mountain-photography/Mountain-photography_fb-img_1200x800.jpg';
+} */
 
 
 /* contact section end*/

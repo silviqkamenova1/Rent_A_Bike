@@ -10,3 +10,52 @@
       padding-left: 0;
     }
   } 
+  .map{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .padding_left_0{
+    padding-left: 15px;
+}
+.subscribe_bt {
+    width: 180px;
+    float: left;
+    margin-top: 15px;
+}
+.subscribe_bt a {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #f7c17b;
+    padding: 8px;
+    margin-top: 25px;
+   margin-left: 10px;
+}
+.subscribe_bt a:hover{
+    color: #9e9c9c;
+    background-color: #ffffff;
+}
+.info{
+    padding-right: 50px;
+    padding-top: 50px;
+}
+
+/* .footer_section {
+    width: 100%;
+    float: left;
+    background-color: #355764;
+    height: auto;
+    background-size: cover;
+}
+.footer_section{
+    padding-top: 0px;
+    padding-bottom: 50px;
+} */
+
+.contact{
+
+}
