@@ -1,3 +1,9 @@
+#navigation{
+  border-style: solid;
+  background-color: #355764;
+  padding-bottom: 20px;
+}
+
 /* .navbar {
     position: relative;
     display: -ms-flexbox;
@@ -28,7 +34,8 @@
       padding-right: 0;
       padding-left: 0;
     }
-  } */
+  }  */
+
   /* .welcomeBar{
     background-color: #f7c17b;
     color: #ffffff;
@@ -41,4 +48,4 @@
    
     
     
-  } */
+  }  */

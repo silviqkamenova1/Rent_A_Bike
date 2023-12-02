@@ -1,8 +1,10 @@
 import { useBikeContext } from "../../contexts/BikeContext";
 import { CatalogItem } from "./CatalogItem/CatalogItem";
 import './Catalog.css'
-export default function Catalog() {
-    const { bikes } = useBikeContext()
+export default function Catalog({
+    bikes
+}) {
+    //const { bikes } = useBikeContext()
     return (
         <div className="cycle_section layout_padding" id="body-bg">
             <div className="container">

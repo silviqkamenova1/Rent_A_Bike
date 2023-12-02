@@ -1,7 +1,5 @@
 import { createContext, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
-
-
 import { authServiceFactory } from '../services/authServices';
 import { useLocalStorage } from "../hooks/useLocaleStorage";
 
@@ -55,7 +53,7 @@ export const AuthProvider = ({
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken //double negative
+        isAuthenticated: !!auth.accessToken //double negation
     };
 
     return (

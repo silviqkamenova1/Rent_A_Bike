@@ -24,9 +24,11 @@ export const useLocalStorage = (key, initialValue) => {
         //overwrote the state
     }
 
-    return [
+    return {
+
         state,
         setLocaleStorageState
-    ]
+    }
+    
 }
 

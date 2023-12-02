@@ -3,8 +3,10 @@ import { useForm } from "../../hooks/useForm";
 
 import './AddBike.css'
 
-export default function AddBike ()  {
-   const { onCerateBikeSubmit } = useBikeContext()
+export default function AddBike ({
+   onCerateBikeSubmit
+})  {
+   //const { onCerateBikeSubmit } = useBikeContext()
    const {values, changeHandler, onSubmit} = useForm({
       frame: '',
       type: '',

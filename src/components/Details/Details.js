@@ -9,13 +9,15 @@ import { useService } from "../../hooks/useService";
 import { useBikeContext } from "../../contexts/BikeContext";
 
 export default function Details() {
-   const navigate = useNavigate();
-   const { userId, isAuthenticated } = useAuthContext();
-   const { deleteBike } = useBikeContext();
    const { bikeId } = useParams();
+   const { userId, isAuthenticated } = useAuthContext();
    const [bike, setBike] = useState({});
+   
+   const { deleteBike } = useBikeContext();
+   
    const [likeBtn, setLikeBtn] = useState(false)
    const bikeService = useService(bikeServiceFactory);
+   const navigate = useNavigate();
 
    useEffect(() => {
       bikeService.getOne(bikeId)

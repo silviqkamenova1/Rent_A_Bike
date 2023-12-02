@@ -1,4 +1,4 @@
-const request = async(method, token, url, data) => {
+const requester = async(method, token, url, data) => {
     const options = {}
 
     if(method !== "GET"){
@@ -15,12 +15,15 @@ const request = async(method, token, url, data) => {
 
     if(token){
         options.headers = {
+            //add the old one if we have token
             ...options.headers,
+            //add this
             'X-Authorization': token,
         }
     }
 
     const response = await fetch(url, options);
+    console.log(response);
 
     if(response.status === 204){
         //no content response edge casae
@@ -41,14 +44,23 @@ const request = async(method, token, url, data) => {
 
 //function which creates an object which allows
 //to bind the token after the method
-export const requestFactory = (token) => {
-    return {
+export const requesterFactory = (token) => {
+    if(!token) {
+        const serializedAuth = localStorage.getItem('auth');
 
-         get : request.bind(null, 'GET', token),
-         post : request.bind(null, 'POST', token),
-         put : request.bind(null, 'PUT', token),
-         patch : request.bind(null, 'PATCH', token),
-         delete : request.bind(null, 'DELETE', token),
+        if(serializedAuth) {
+            const auth = JSON.parse(serializedAuth);
+            token = auth.accessToken;
+        }
+    }
+
+    return {
+        get : requester.bind(null, 'GET', token),
+        post : requester.bind(null, 'POST', token),
+        put : requester.bind(null, 'PUT', token),
+        patch : requester.bind(null, 'PATCH', token),
+        delete : requester.bind(null, 'DELETE', token),
     }
 
 }
+

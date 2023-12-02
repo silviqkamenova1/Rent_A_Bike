@@ -13,7 +13,7 @@ export default function Navigation() {
                 <span className="navbar-toggler-icon"></span>
             </button> */}
 
-            <div className="collapse navbar-collapse" >
+            <div className="collapse navbar-collapse" id="navigation">
                 <ul className="navbar-nav mr-auto ">
                     <li className="nav-item active ">
                         <Link className="nav-link" to="/">Home</Link>
@@ -43,6 +43,7 @@ export default function Navigation() {
                         {/* </>
                     )} */}
                 </ul>
+               
                 <form className="form-inline my-2 my-lg-0">
                     <div className="login_menu">
                         <ul>
@@ -50,7 +51,7 @@ export default function Navigation() {
                                 <>
                                     <li>Welcome, {userEmail}!</li>
                                     <li><Link className="nav-btns" to="/logout">Logout</Link></li>
-                                    <li><Link to="/trolley"><img alt='' src="assets/images/trolly-icon.png" /></Link></li>
+                                    <li><Link to="/trolley" className="nav-btns">Profile</Link></li>
                                     <li><Link to="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></Link></li>
                                 </>
                             )}
