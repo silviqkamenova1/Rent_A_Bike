@@ -5,13 +5,12 @@ import { useLocalStorage } from "../hooks/useLocaleStorage";
 
 //the context
 export const AuthContext = createContext();
-
 //component who wrapped and submit the provider and all functionality
 export const AuthProvider = ({
     children,
 }) => {
-    const navigate = useNavigate();
     const [auth, setAuth] = useLocalStorage('auth', {});
+    const navigate = useNavigate();
     const authService = authServiceFactory(auth.accessToken);
 
     const onLoginSubmit = async (data) => {

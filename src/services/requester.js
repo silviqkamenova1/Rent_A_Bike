@@ -23,7 +23,7 @@ const requester = async(method, token, url, data) => {
     }
 
     const response = await fetch(url, options);
-    console.log(response);
+    console.log(response.status);
 
     if(response.status === 204){
         //no content response edge casae

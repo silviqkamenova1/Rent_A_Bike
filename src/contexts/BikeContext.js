@@ -15,14 +15,14 @@ export const BikeProvider = ({
     const authService = authServiceFactory(auth.accessToken);
 
 
-    const bikeService = bikeServiceFactory(auth.accessToken);
+    const bikeService = bikeServiceFactory(auth.accessToken);//
 
     const onAuthorisedCreate = async (data) => {
         try {
             const result = await authService.login(data);
             setAuth(result);
 
-            navigate('/');
+            // navigate('/');
         } catch (error) {
             console.log('There is a problem');
         }

@@ -27,37 +27,38 @@ import { BikeOwner } from './components/common/BikeOwner';
 import Profile from './components/Profile/Profile';
 import { bikeServiceFactory } from './services/bikeService';
 import { authServiceFactory } from './services/authServices';
-//import { useService } from './hooks/useService';
+import { useService } from './hooks/useService';
+import { BikeProvider } from './contexts/BikeContext';
 
 export default function App() {
-const navigate = useNavigate();
-const [bikes, setBikes] = useState([]);
-//const [auth, setAuth] = useState({});
-const bikeService = bikeServiceFactory()//auth.accessToken
-// const authService = authServiceFactory(auth.accessToken)
+// const navigate = useNavigate();
+// const [bikes, setBikes] = useState([]);
+// const [auth, setAuth] = useState({});
 
+// const bikeService = useService(bikeServiceFactory)
+// const authService = useService(authServiceFactory)
+// //const bikeService = bikeServiceFactory(auth.accessToken)
+// //const authService = authServiceFactory(auth.accessToken)
 
+// useEffect(() => {
+//    bikeService.getAll()
+//       .then(result => {
+//          setBikes(result)
+//       })
+// }, []);
 
-useEffect(() => {
-   bikeService.getAll()
-      .then(result => {
-         setBikes(result)
-      })
-}, []);
+// const onCerateBikeSubmit = async (data) => {
+//    const newBike = await bikeService.create(data);
 
-const onCerateBikeSubmit = async (data) => {
-   const newBike = await bikeService.create(data);
+//    setBikes(state => [...state, newBike]);
 
-   setBikes(state => [...state, newBike]);
-
-   navigate('/catalog');
-};
+//    navigate('/catalog');
+// };
 
 // const onLoginSubmit = async (data) => {
 //    try {
 //        const result = await authService.login(data);
 //        setAuth(result);
-
 //        navigate('/');
 //    } catch (error) {
 //        console.log('There is a problem');
@@ -84,12 +85,12 @@ const onCerateBikeSubmit = async (data) => {
 //    setAuth({});
 // };
 
-const onBikeEditSubmit = async (values) => {
-   const result = await bikeService.edit(values._id, values);  
-   setBikes(state => state.map(x => x._id === values._id ? result : x));
+// const onBikeEditSubmit = async (values) => {
+//    const result = await bikeService.edit(values._id, values);  
+//    setBikes(state => state.map(x => x._id === values._id ? result : x));
 
-   navigate(`/catalog/${values._id}`);
-};
+//    navigate(`/catalog/${values._id}`);
+// };
 
 
 // const contextValues = {
@@ -103,7 +104,8 @@ const onBikeEditSubmit = async (values) => {
 // }
    return (
       <AuthProvider >
-         {/* <AuthContext.Provider value={contextValues}> */}
+         <BikeProvider>
+          {/* <AuthContext.Provider value={contextValues}> */}
             <body id='body-bg'>
                <div className="header_section header_bg">
                   <Navigation />
@@ -118,14 +120,14 @@ const onBikeEditSubmit = async (values) => {
                   <Route path='/register' element={<Register />} />
                   <Route path='/contacts' element={<Contacts />} />
                   <Route path='/trolley' element={<Profile />} />
-                  <Route path='/catalog' element={<Catalog bikes={bikes}/>} />
+                  <Route path='/catalog' element={<Catalog/>} />
                   <Route path='/catalog/:bikeId' element={<Details />} />
                   <Route element={<RoutGuard />}>
 
-                     <Route path='/create' element={<AddBike onCerateBikeSubmit={onCerateBikeSubmit}/>} />
+                     <Route path='/create' element={<AddBike />} />
                      <Route path='/catalog/:bikeId/edit' element={
                         <BikeOwner>
-                           <Edit onBikeEditSubmit={onBikeEditSubmit}/>
+                           <Edit />
                         </BikeOwner>
                      } />
                      <Route path='/logout' element={<Logout />} />
@@ -144,7 +146,8 @@ const onBikeEditSubmit = async (values) => {
                </div>
             </footer>
          {/* </AuthContext.Provider> */}
-      </AuthProvider>
+         </BikeProvider>
+       </AuthProvider>
    );
 }
 

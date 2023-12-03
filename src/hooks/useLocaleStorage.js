@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export const useLocalStorage = (key, initialValue) => {
     const [state, setState] = useState(() => {
         //if its persisted
         const persistedStateSerialized = localStorage.getItem(key);
-        if(persistedStateSerialized){
+        if (persistedStateSerialized) {
             const persistedState = JSON.parse(persistedStateSerialized);
 
             return persistedState;
@@ -19,16 +19,18 @@ export const useLocalStorage = (key, initialValue) => {
         setState(value);
 
         //set it into locale storage
-        localStorage.setItem(key, JSON.stringify(value))
+        localStorage.setItem(key, JSON.stringify(value));
         //by the key we will set the data in localestorage
         //overwrote the state
-    }
+    };
 
-    return {
-
+    return [
         state,
         setLocaleStorageState
-    }
-    
+    ];
+
+
+
+
 }
 

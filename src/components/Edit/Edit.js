@@ -7,10 +7,8 @@ import { bikeServiceFactory } from "../../services/bikeService";
 import { useBikeContext } from "../../contexts/BikeContext";
 
 
-export default function Edit({
-   onBikeEditSubmit
-}) {
-   //const { onBikeEditSubmit } = useBikeContext()
+export default function Edit() {
+   const { onBikeEditSubmit } = useBikeContext()
    const { bikeId } = useParams()// use it to make a request with useEffect
    const bikeService = useService(bikeServiceFactory)
    const { values, changeHandler, onSubmit, changeValues } = useForm({
