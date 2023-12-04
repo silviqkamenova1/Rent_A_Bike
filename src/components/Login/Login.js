@@ -1,12 +1,13 @@
 import './Login.css'
 
-import {  useAuthContext } from "../../contexts/AuthContext";
+import {  AuthContext, useAuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 
 export default function Login() {
    // access the data which we gave through context provider
-   const { onLoginSubmit } = useAuthContext();
+   const { onLoginSubmit } = useContext(AuthContext);
    
    //adding initial values which we want to control
    //giving to the hook handler in the end
@@ -43,7 +44,7 @@ export default function Login() {
                      />
                   </div>
 
-                  <p class="field">
+                  <p className="field">
                      <span>If you don't have profile click <Link className='here' to="/register">here</Link></span>
                   </p>
                   <div className="container_send">

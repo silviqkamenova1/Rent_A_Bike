@@ -1,19 +1,18 @@
 import React, {useState} from "react";
 
-function getDate() { 
-     const today = new Date(); 
-     const month = today. getMonth() + 1; 
-     const year = today. getFullYear(); 
-     const date = today
-     return `${date}/${month}/${year}`;
- }
+// function getDate() { 
+//      const today = new Date(); 
+//      const month = today. getMonth() + 1; 
+//      const year = today. getFullYear(); 
+//      const date = today
+//      return `${date}/${month}/${year}`;
+//  }
 export default function News() {
-    const [currentData, setCurrentDate] = useState(getDate())
-    console.log(currentData.split(' '));
+    // const [currentData, setCurrentDate] = useState(getDate())
     return (
         <div className="news_section layout_padding">
             <div className="container">
-                <h1 className="news_taital">News {currentData}</h1>
+                <h1 className="news_taital">News</h1>
                 <h1 className="news_taital"> </h1>
                 <p className="news_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using </p>
                 <div className="news_section_2 layout_padding">

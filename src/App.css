@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -35,7 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-} */
-#body-bg{
-  background-image: 'https://static3.bigstockphoto.com/7/7/2/large1500/277142275.jpg';
 }

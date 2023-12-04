@@ -1,9 +1,9 @@
-import {requesterFactory} from './requester'
+import {requestFactory} from './requester'
 
 const baseUrl = 'http://localhost:3030/data/bikes';
 
 export const bikeServiceFactory = (token) => {
-    const request = requesterFactory(token);
+    const request = requestFactory(token);
 
     const getAll = async () => {
        const result = await request.get(baseUrl);
@@ -20,9 +20,15 @@ export const bikeServiceFactory = (token) => {
     
     const create = async (bikeData) => {
        const result = await request.post(baseUrl, bikeData);
+       console.log(result);
        return result;
     };
-
+    
+    //  const addComment = async (gameId, data) => {
+    //     const result = await request.post(`${baseUrl}/${gameId}/comments`, data);
+    
+    //     return result;
+    // }
     const edit = (bikeId, data) => {
         const result = request.put(`${baseUrl}/${bikeId}`, data);
         return result;

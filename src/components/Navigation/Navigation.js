@@ -50,9 +50,9 @@ export default function Navigation() {
                             {isAuthenticated && (
                                 <>
                                     <li>Welcome, {userEmail}!</li>
-                                    <li><Link className="nav-btns" to="/logout">Logout</Link></li>
                                     <li><Link to="/trolley" className="nav-btns">Profile</Link></li>
-                                    <li><Link to="/cycle/search"><img alt='' src="assets/images/search-icon.png" /></Link></li>
+                                    <li><Link to="/search"><img alt='' src="assets/images/search-icon.png" /></Link></li>
+                                    <li><Link className="nav-btns" to="/logout">Logout</Link></li>
                                 </>
                             )}
                             {!isAuthenticated && (

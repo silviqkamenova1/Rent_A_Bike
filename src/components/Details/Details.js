@@ -1,19 +1,21 @@
 import './Details.css';
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { bikeServiceFactory } from "../../services/bikeService";
-import { useAuthContext } from "../../contexts/AuthContext";
+import { AuthContext, useAuthContext } from "../../contexts/AuthContext";
 import { useService } from "../../hooks/useService";
-import { useBikeContext } from "../../contexts/BikeContext";
+import { BikeContext, useBikeContext } from "../../contexts/BikeCntext";
 
-export default function Details() {
+export default function Details({
+   deleteBike
+}) {
    const { bikeId } = useParams();
-   const { userId, isAuthenticated } = useAuthContext();
+   const { userId, isAuthenticated } = useContext(AuthContext);
    const [bike, setBike] = useState({});
    
-   const { deleteBike } = useBikeContext();
+   //const { deleteBike } = useContext(BikeContext);
    
    const [likeBtn, setLikeBtn] = useState(false)
    const bikeService = useService(bikeServiceFactory);
