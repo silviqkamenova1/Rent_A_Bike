@@ -1,0 +1,26 @@
+{
+    "773155c6-2922-44ed-bacb-a1f9529baa18":{
+        "_ownerId": "cddf2bbd-e042-4a17-98d9-130a47a514ad",
+        "frame": "Cube",
+        "type": "Road bike",
+        "size": "M",
+        "year": "2022",
+        "price": "110",
+        "image": "https://bikezone.bg/uploads/895_0_planinski-velosiped-cube-reaction-pro-29.webp",
+        "description": "If your passion is hight speed this bike is the best choise for you. ",
+        "_createdOn": 1701715487521,
+        "_id": "773155c6-2922-44ed-bacb-a1f9529baa18"
+    },
+    "e82d3410-2bd8-45f0-b1a7-e7e0b366e530": {
+        "_ownerId": "cddf2bbd-e042-4a17-98d9-130a47a514ad",
+        "frame": "Cube Attention",
+        "type": "Mountain bike",
+        "size": "L",
+        "year": "2021",
+        "price": "90",
+        "image": "https://bikezone.bg/uploads/thumbs/888_0_planinski-velosiped-cube-attention-29-2021.webp",
+        "description": "Mountain bike Cube Attention 27.5 is a bike designed for forest and mountain trails. Thanks to the completely changed Shimano Deore gear system and its rich speed variability, you will be able to ride even the steepest trails.",
+        "_createdOn": 1701715748900,
+        "_id": "e82d3410-2bd8-45f0-b1a7-e7e0b366e530"
+    }
+}

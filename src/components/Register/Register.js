@@ -62,7 +62,7 @@ export default function Register({
                                 onChange={changeHandler}
                             />
                         </div>
-                        <p class="field">
+                        <p className="field">
                             <span>If you have profile click <Link to="/login" className='here'>here</Link></span>
                         </p>
                         <div className="container_send">
