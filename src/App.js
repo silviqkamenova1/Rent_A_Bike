@@ -127,7 +127,7 @@ export default function App() {
                <Route path='/trolley' element={<Profile />} />
                <Route path='/catalog' element={<Catalog bikes={bikes} />} />
                <Route path='/catalog/:bikeId' element={<Details deleteBike={deleteBike}/>} />
-               <Route path='/search' element={<Search />} />
+               <Route path='/search' element={<Search bikes={bikes}/>} />
                <Route element={<RoutGuard />}>
                   <Route path='/create' element={<AddBike onCerateBikeSubmit={onCerateBikeSubmit} />} />
                   <Route path='/catalog/:bikeId/edit' element={
