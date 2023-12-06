@@ -26,6 +26,10 @@ import Catalog from './components/Catalog/Catalog';
 import { Logout } from './components/Logout/Logout';
 import Edit from './components/Edit/Edit';
 import { useLocalStorage } from './hooks/useLocaleStorage';
+import NewsDetails1 from './components/News/NewsDetails/NewsDetails1';
+import NewsDetails2 from './components/News/NewsDetails/NewsDetails2';
+import NewsDetails3 from './components/News/NewsDetails/NewsDetails3';
+import ErrorBox from './components/Error/Error';
 
 export default function App() {
    const navigate = useNavigate();
@@ -121,6 +125,9 @@ export default function App() {
             </div>
             <Routes>
                <Route path='/news' element={<News />} />
+               <Route path='/news-details1' element={<NewsDetails1 />} />
+               <Route path='/news-details2' element={<NewsDetails2 />} />
+               <Route path='/news-details3' element={<NewsDetails3 />} />
                <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit} />} />
                <Route path='/register' element={<Register onRegisterSubmit={onRegisterSubmit}/>} />
                <Route path='/contacts' element={<Contacts />} />
@@ -128,6 +135,7 @@ export default function App() {
                <Route path='/catalog' element={<Catalog bikes={bikes} />} />
                <Route path='/catalog/:bikeId' element={<Details deleteBike={deleteBike}/>} />
                <Route path='/search' element={<Search bikes={bikes}/>} />
+               <Route path='/error' element={<ErrorBox />} />
                <Route element={<RoutGuard />}>
                   <Route path='/create' element={<AddBike onCerateBikeSubmit={onCerateBikeSubmit} />} />
                   <Route path='/catalog/:bikeId/edit' element={

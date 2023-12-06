@@ -36,7 +36,7 @@ export default function Search() {
         )
   
       );
-      
+      console.log(result);
       return result;
     }
     return (
@@ -70,7 +70,7 @@ export default function Search() {
 
                 </div>
               
-                {data.length == 0 && (<p className="no-result">No result.</p>)}
+                {data.length === 0 && (<p className="no-result">No result.</p>)}
             
         </section>
     );

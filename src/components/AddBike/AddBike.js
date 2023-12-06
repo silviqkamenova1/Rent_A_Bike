@@ -17,7 +17,6 @@ export default function AddBike ({
       description: '',
    },onCerateBikeSubmit);
 
-console.log(onCerateBikeSubmit);
    return (
 
       <div className="contact_section layout_padding">
