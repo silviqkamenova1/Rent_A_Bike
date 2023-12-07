@@ -26,17 +26,17 @@ export default function Login() {
       setformErrors(Validation(values))
    }
 
-   // const handelSubmit = (ev) => {
-   //    ev.preventDefault()
-   //    onSubmit();
-   //    handleValidation();
-   // }
+   const handelSubmit = (ev) => {
+      ev.preventDefault()
+      onSubmit(ev);
+      handleValidation();
+   }
    return (
       <div className="contact_section layout_padding">
          <div className="container">
             <div className="contact_main">
                <h1 className="request_text">Login</h1>
-               <form method="POST" onSubmit={onSubmit} >
+               <form method="POST" onSubmit={handelSubmit} >
                   <div className="form-group">
                      <input
                         type="email"
