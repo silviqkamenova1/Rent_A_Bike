@@ -1,20 +1,26 @@
 # Rent-A-Bike React Project
 
-Welcome to Rent-A-Bike, the ultimate platform for bike enthusiasts to explore, rent, and share their passion for cycling. This React application interacts with the SoftUni practice server, providing users with a seamless experience to rent various types of bikes.
+Welcome to Rent-A-Bike, your go-to platform for renting various types of bikes. This React application interacts with the SoftUni practice server, offering a seamless experience for bike enthusiasts.
 
 ## Getting Started
 
-To set up the project on your local machine, follow the steps below:
+Follow these steps to set up the project on your local machine:
 
-### 1. Install Dependencies
+### 1. Clone the Repository
 
-Open your terminal and navigate to the project directory. Run the following command to install the required dependencies:
+```bash
+git clone https://github.com/silviqkamenova1/Rent_A_Bike
+```
+
+### 2. Install Dependencies
+
+Navigate to the project directory and run the following command to install the necessary dependencies:
 
 ```bash
 npm install
 ```
 
-### 2. Start the Server
+### 3. Start the Server
 
 Navigate to the `server` folder in the terminal:
 
@@ -28,7 +34,7 @@ Start the practice server by running:
 node server.js
 ```
 
-### 3. Run the Client
+### 4. Run the Client
 
 Open another terminal window and navigate to the `client` folder:
 
@@ -42,7 +48,7 @@ Start the React development server:
 npm start
 ```
 
-### 4. Explore the App
+### 5. Explore the App
 
 Once the server and client are running, open your preferred browser (Chrome or Microsoft Edge is recommended) and go to [http://localhost:3000](http://localhost:3000) to access the Rent-A-Bike application.
 
