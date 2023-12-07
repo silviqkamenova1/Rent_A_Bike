@@ -1,70 +1,67 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rent-A-Bike React Project
+Welcome to Rent-A-Bike, the ultimate platform for bike enthusiasts to explore, rent, and share their passion for cycling. This React application interacts with the SoftUni practice server, providing users with a seamless experience to rent various types of bikes.
 
-## Available Scripts
+Getting Started
+To set up the project on your local machine, follow the steps below:
 
-In the project directory, you can run:
+1. Install Dependencies
+Open your terminal and navigate to the project directory. Run the following command to install the required dependencies:
 
-### `npm start`
+bash
+Copy code
+npm install
+2. Start the Server
+Navigate to the server folder in the terminal:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+cd server
+Start the practice server by running:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+bash
+Copy code
+node server.js
+3. Run the Client
+Open another terminal window and navigate to the client folder:
 
-### `npm test`
+bash
+Copy code
+cd client
+Start the React development server:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+npm start
+4. Explore the App
+Once the server and client are running, open your preferred browser (Chrome or Microsoft Edge is recommended) and go to http://localhost:3000 to access the Rent-A-Bike application.
 
-### `npm run build`
+Features
+User Authentication:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create an account and log in to access personalized features.
+User Roles:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Not logged in users can view the Home, Catalog, Contacts, and News pages.
+Logged in users can:
+Create their own bike offers.
+Edit or delete their existing offers.
+Rent any available bike.
+Like news articles on the News page.
+Pages:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Home: Overview of the Rent-A-Bike platform.
+Catalog: Browse available bikes for rent.
+Contacts: Find our contact information.
+News: Read and like news articles.
+Search: Available only for logged-in users, providing additional filtering options.
+Note
+The app is currently not fully responsive, and it is recommended to use Chrome or Microsoft Edge for the best experience.
 
-### `npm run eject`
+Contributing
+If you'd like to contribute to the project, feel free to submit pull requests or open issues. Your feedback and contributions are highly appreciated.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+License
+This project is licensed under the MIT License.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy using Rent-A-Bike! If you have any questions or encounter issues, please don't hesitate to reach out.

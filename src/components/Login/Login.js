@@ -1,9 +1,10 @@
 import './Login.css'
 
-import {  AuthContext, useAuthContext } from "../../contexts/AuthContext";
+import {  AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import Validation from '../FormValidation/FormValidation';
 
 export default function Login() {
    // access the data which we gave through context provider
@@ -17,12 +18,25 @@ export default function Login() {
       email: '',
       password: '',
    }, onLoginSubmit);
+
+   const [formErrors, setformErrors] = useState({});
+
+   function handleValidation(ev){
+      ev.preventDefault();
+      setformErrors(Validation(values))
+   }
+
+   // const handelSubmit = (ev) => {
+   //    ev.preventDefault()
+   //    onSubmit();
+   //    handleValidation();
+   // }
    return (
       <div className="contact_section layout_padding">
          <div className="container">
             <div className="contact_main">
                <h1 className="request_text">Login</h1>
-               <form method="POST" onSubmit={onSubmit}>
+               <form method="POST" onSubmit={onSubmit} >
                   <div className="form-group">
                      <input
                         type="email"
@@ -32,6 +46,7 @@ export default function Login() {
                         value={values.email}
                         onChange={changeHandler}
                      />
+                     {formErrors.email && <p style={{color:"red"}}>{formErrors.email}</p>}
                   </div>
                   <div className="form-group">
                      <input
@@ -41,7 +56,8 @@ export default function Login() {
                         name="password"
                         value={values.password}
                         onChange={changeHandler}
-                     />
+                        />
+                        {formErrors.password && <p style={{color:"red"}}>{formErrors.password}</p>}
                   </div>
 
                   <p className="field">
