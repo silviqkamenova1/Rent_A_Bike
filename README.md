@@ -36,12 +36,6 @@ node server.js
 
 ### 4. Run the Client
 
-Open another terminal window and navigate to the `client` folder:
-
-```bash
-cd client
-```
-
 Start the React development server:
 
 ```bash

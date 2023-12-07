@@ -4,9 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { bikeServiceFactory } from "../../services/bikeService";
-import { AuthContext, useAuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import { useService } from "../../hooks/useService";
-import { BikeContext, useBikeContext } from "../../contexts/BikeCntext";
 
 export default function Details({
    deleteBike
@@ -56,7 +55,7 @@ export default function Details({
                      <div className="image_2 "><img className='bikePic' alt='' src={bike.image} /></div>
                   </div>
                   <div className="form-group">
-                     <input className="email-bt frame" placeholder="Frame" value={bike.frame} />
+                     <input className="email-bt frame-details" placeholder="Frame" value={bike.frame} />
                   </div>
 
                   <div id="details-description">
@@ -104,14 +103,3 @@ export default function Details({
 }
 
 
-{/* <div class="animalPic">
-<img src="${petDetails.image}">
-</div>
-
-<div class="animalInfo">
-<h1>Name: ${petDetails.name}</h1>
-<h3>Breed: ${petDetails.breed}</h3>
-<h4>Age: ${petDetails.age}</h4>
-<h4>Weight: ${petDetails.weight}</h4>
-<h4 class="donation">Donation: ${counter}</h4>
-</div> */}

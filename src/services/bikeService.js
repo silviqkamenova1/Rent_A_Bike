@@ -20,15 +20,9 @@ export const bikeServiceFactory = (token) => {
     
     const create = async (bikeData) => {
        const result = await request.post(baseUrl, bikeData);
-       console.log(result);
        return result;
     };
     
-    //  const addComment = async (gameId, data) => {
-    //     const result = await request.post(`${baseUrl}/${gameId}/comments`, data);
-    
-    //     return result;
-    // }
     const edit = (bikeId, data) => {
         const result = request.put(`${baseUrl}/${bikeId}`, data);
         return result;

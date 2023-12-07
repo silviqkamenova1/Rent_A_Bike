@@ -36,7 +36,6 @@ export default function Search() {
         )
   
       );
-      console.log(result);
       return result;
     }
     return (

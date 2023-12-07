@@ -4,7 +4,7 @@ import {  AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import Validation from '../FormValidation/FormValidation';
+import Validation from './loginValidation';
 
 export default function Login() {
    // access the data which we gave through context provider
@@ -29,7 +29,7 @@ export default function Login() {
    const handelSubmit = (ev) => {
       ev.preventDefault()
       onSubmit(ev);
-      handleValidation();
+      handleValidation(ev);
    }
    return (
       <div className="contact_section layout_padding">

@@ -1,9 +1,8 @@
 import './Register.css'
-
-import { useContext } from "react";
-import { AuthContext, useAuthContext } from "../../contexts/AuthContext";
+import Validation from './regValidation';
 import { useForm } from "../../hooks/useForm";
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 export default function Register({
     onRegisterSubmit
@@ -16,12 +15,25 @@ export default function Register({
         repass: '',
     }, onRegisterSubmit);
     //add onRegisterSubmit like hendler just to use in the form
+    const [formErrors, setformErrors] = useState({});
+
+    function handleValidation(ev){
+        ev.preventDefault();
+        setformErrors(Validation(values))
+     }
+  
+     const handelSubmit = (ev) => {
+        ev.preventDefault()
+        onSubmit(ev);
+        handleValidation(ev);
+     }
+
     return (
         <div className="contact_section layout_padding">
             <div className="container">
                 <div className="contact_main">
                     <h1 className="request_text">Register</h1>
-                    <form action="/action_page.php" method="POST" onSubmit={onSubmit}>
+                    <form action="/action_page.php" method="POST" onSubmit={handelSubmit}>
                         <div className="form-group">
                             <input
                                 type="username"
@@ -31,6 +43,8 @@ export default function Register({
                                 value={values.username}
                                 onChange={changeHandler}
                             />
+                        {formErrors.username && <p style={{color:"red"}}>{formErrors.username}</p>}
+
                         </div>
                         <div className="form-group">
                             <input
@@ -41,6 +55,8 @@ export default function Register({
                                 value={values.email}
                                 onChange={changeHandler}
                             />
+                        {formErrors.email && <p style={{color:"red"}}>{formErrors.email}</p>}
+
                         </div>
                         <div className="form-group">
                             <input
@@ -51,6 +67,8 @@ export default function Register({
                                 value={values.password}
                                 onChange={changeHandler}
                             />
+                        {formErrors.password && <p style={{color:"red"}}>{formErrors.password}</p>}
+
                         </div>
                         <div className="form-group">
                             <input
@@ -61,6 +79,8 @@ export default function Register({
                                 value={values.repass}
                                 onChange={changeHandler}
                             />
+                        {formErrors.repass && <p style={{color:"red"}}>{formErrors.repass}</p>}
+
                         </div>
                         <p className="field">
                             <span>If you have profile click <Link to="/login" className='here'>here</Link></span>

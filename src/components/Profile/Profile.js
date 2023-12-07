@@ -21,6 +21,12 @@ const ShoppingCart = () => {
     setCart(updatedCart);
     setTotal(total - product.price);
   };
+  async function solve(){
+    const allusers = await fetch('http://localhost:3030/users')
+    let result = await allusers.json()
+    return result;
+  }
+  console.log(solve);
 
   return (
     <div>
