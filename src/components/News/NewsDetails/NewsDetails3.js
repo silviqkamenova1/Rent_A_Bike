@@ -1,18 +1,42 @@
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import './NewsDetails.css';
 
 
 export default function NewsDetails3() {
+    const [likes, setLikes] = useState(0);
+    const [liked, setLiked] = useState(false);
     return (
-        <Link className="col-sm-4" to={'/news-details3'}>
+        <div className="col-sm-4" to={'/news-details3'}>
             <div className="box_main_1">
                 <div className="zoomout frame"><img alt='' src="assets/images/img-8.png" /></div>
                 <div className="padding_15">
-                    <h2 className="speed_text">Jaump cycle</h2>
-                    <div className="post_text">Post by : Den <span className='span4'>20-12-2019</span></div>
-                    <p className="long_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using </p>
+                    <h1>Team TotalEnergies to ride ENVE Melee road bike for next two seasons</h1>
+                    <h2 className="speed_text">The team will also use ENVE wheels and components</h2>
+                    <div className="post_text">Post by : Stan Portus <span className='span4'>December 5, 2023 at 3:00 pm</span></div>
+                    <p className="long_text">ENVE will provide Team TotalEnergies with its Melee road bike, wheels and components for the next two seasons.
 
+                        TotalEnergie previously used Specialized bikes, but ENVE will expand its presence in professional road cycling with the new partnership.
+
+                        ENVE says it will continue to provide the WorldTour team UAE Team Emirates with its SES wheels and SES Aero One-Piece handlebar. Ivan Basso and Alberto Contador's project, Team Polti Kometa, will also remain on ENVE wheels. Before releasing the Custom Road in 2021, ENVE had focused on producing wheels and other components, such as handlebars, stems and forks.
+
+                        The Melee, released in July 2022, was the brand's second bike. Unlike the Custom Road, which can be configured to your specific needs, ENVE chose to produce the Melee in a more conventional range of seven sizes.
+
+                        The partnership between Team TotalEnergies and ENVE will be the first time the Melee has been raced in the professional peloton.
+
+                        Team TotalEnergies manager Jean-René Bernaudeau says the team were already familiar with ENVE's wheels, but discussions with ENVE's engineers began in October.
+                    </p>
+                    <div className="like-button-container">
+                        <button
+                            className={`like-button ${liked ? 'liked' : ''}`}
+                            onClick={() => {
+                                setLikes(likes + 1);
+                                setLiked(true);
+                            }}>
+                            {likes} Likes
+                        </button>
+                    </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }

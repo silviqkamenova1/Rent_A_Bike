@@ -1,0 +1,22 @@
+.container_send{
+    margin: auto;
+    display: flex;
+}
+.send_btn {
+    width: 170px;
+    text-align: center;
+    margin: 0px auto;
+}
+.send_btn  {
+    width: 30%;
+    float: left;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 0px;
+    background-color: #f7c17b;
+    border-radius: 10px;
+}
+.send_btn input:hover {
+    color: #000;
+    background-color: #ffffff;
+}
