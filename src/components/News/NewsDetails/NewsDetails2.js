@@ -8,9 +8,9 @@ export default function NewsDetails2() {
     return (
         <div className="col-sm-4" >
             <div className="box_main_1">
-                <div className="zoomout frame pic"><img alt='' src="https://images.immediate.co.uk/production/volatile/sites/21/2023/04/Ultima-ABS-plastic-bike-1-of-18-e01e99a.jpg?webp=true&quality=90&resize=620%2C413" /></div>
+                <div className="imgNews"><img alt='' src="https://images.immediate.co.uk/production/volatile/sites/21/2023/04/Ultima-ABS-plastic-bike-1-of-18-e01e99a.jpg?webp=true&quality=90&resize=620%2C413" /></div>
                 <div className="padding_15">
-                    <h1 >Ultima Multipath is the first ebike made from recycled plastic and alloy</h1>
+                    <h1 className='speed_text1'>Ultima Multipath is the first ebike made from recycled plastic and alloy</h1>
                     <h2 className="speed_text">Highly configurable 'smart' electric bike adjusts assistance level for you</h2>
                     <div className="post_text">Post by :  Jack Evans <span className='span4'>April 25, 2023 at 11:28 am</span></div>
                     <p className="long_text">The Ultima Multipath is claimed to be the first electric bike with a frameset made from recycled plastic and alloy.

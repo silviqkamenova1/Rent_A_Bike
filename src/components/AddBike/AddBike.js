@@ -10,7 +10,7 @@ export default function AddBike ({
    onCerateBikeSubmit
 })  {
    //const { onCerateBikeSubmit } = useBikeContext()
-   const {values, changeHandler, onSubmit} = useForm({
+   const {values, changeHandler, onSubmit } = useForm({
       frame: '',
       type: '',
       size: '',
@@ -21,7 +21,7 @@ export default function AddBike ({
    },onCerateBikeSubmit);
 
    const [formErrors, setformErrors] = useState({});
-
+    //const { isDirty, isValid } = formState
    function handleValidation(ev){
       ev.preventDefault();
       setformErrors(Validation(values))
@@ -36,14 +36,14 @@ export default function AddBike ({
       if(Object.keys(formErrors).length === 0 && onSubmit){
       }
   }, [])
-
+// 46 row add noValidate
    return (
 
       <div className="contact_section layout_padding">
          <div className="container">
             <div className="contact_main">
                <h1 className="request_text">Add Bike</h1>
-               <form method="POST" onSubmit={handelSubmit}>
+               <form method="POST" onSubmit={handelSubmit} >
                {Object.keys(formErrors).length === 0 && onSubmit ? <p>successful</p>: <p>unsuccessful</p>}
                   <div className="form-group">
                      <input value={values.frame} onChange={changeHandler} type="text" className="email-bt" placeholder="Frame" name="frame" />
@@ -74,7 +74,7 @@ export default function AddBike ({
                      {formErrors.description && <p style={{color:"red"}}>{formErrors.description}</p>}
                   </div>
                   <div className="container_send">
-                     <input className="send_btn" type="submit" value="Add Bike"/>
+                     <input className="send_btn" type="submit" value="Add Bike" />
                   </div>
                </form>
                
