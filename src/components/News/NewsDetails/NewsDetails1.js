@@ -6,14 +6,14 @@ export default function NewsDetails1() {
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
     return (
-        <div className="col-sm-4 " >
-            <div className="box_main_1">
+        <div className="col-sm-4 offset-sm-4" >
+            <div className="box_main_1 box-news">
                 <div className='imgNews'><img alt='' src="https://images.immediate.co.uk/production/volatile/sites/21/2023/12/focusparalane8.9profile-5fc5ebb.jpg?webp=true&quality=90&resize=620%2C413" /></div>
                 <div className="padding_15">
-                    <h1 className='h1'>New Focus Paralane targets fast endurance riders with lighter, stiffer and more aero frame</h1>
-                    <h2 className="speed_text">Latest version of German brand's endurance road bike also gains an integrated stem and top tube mounts</h2>
-                    <div className="post_text">Post by : Jack Evans <span className='span4'>December 6, 2023 at 1:00 pm</span></div>
-                    <p className="long_text">Focus has unveiled a new version of its Paralane endurance road bike, claiming a revised frame design saves weight and increases stiffness while retaining all-day comfort.
+                    <h1 className='speed_text1'>New Focus Paralane targets fast endurance riders with lighter, stiffer and more aero frame</h1>
+                    <h2 className="speed_text2">Latest version of German brand's endurance road bike also gains an integrated stem and top tube mounts</h2>
+                    <div className="post_text1">Post by : Jack Evans <span className='span4'>December 6, 2023 at 1:00 pm</span></div>
+                    <p className="long_text1">Focus has unveiled a new version of its Paralane endurance road bike, claiming a revised frame design saves weight and increases stiffness while retaining all-day comfort.
 
                         The second-generation Paralane targets riders who want to travel far, but without sacrificing comfort and practicality for speed.
 

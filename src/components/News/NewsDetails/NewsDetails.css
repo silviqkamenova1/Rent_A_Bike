@@ -1,24 +1,21 @@
-.pic {
+.pic{
    display: block;
    margin-left: auto;
    margin-right: auto;
 }
-
 .like-button-container {
    display: flex;
    float: inline-end;
    justify-content: center;
 }
-
 .like-button-container {
    display: flex;
    justify-content: center;
    align-items: center;
    margin: 20px;
 }
-
 .like-button {
-   border: none;
+   border: none; 
    outline: none;
    background-color: transparent;
    font-size: 18px;
@@ -29,23 +26,19 @@
    padding: 10px 20px;
    border: 2px solid #333;
 }
-
 .like-button:hover {
    color: #fff;
    background-color: #f7c17b;
 }
-
 .like-button.liked {
    color: #325662;
-   border-color: #325662;
+   border-color:  #325662;
 }
-
 /* For mobile screens */
 @media (max-width: 768px) {
    .like-button-container {
       flex-direction: column;
    }
-
    .like-button {
       font-size: 16px;
       margin-bottom: 10px;
@@ -53,71 +46,45 @@
       border-width: 1px;
    }
 }
-
 .frame {
    height: 350px;
    width: 100%;
    overflow: hidden;
 
-}
+ }
 
-.newsBox {
+ .imgNews{
    padding-top: 50px;
-   width: fit-content;
-   height: auto;
+ }
+ 
+ .imgNews img{
+   border-radius: 20%;
+ }
+ .long_text1{
+   font-size: large;
+   text-align: center;
+ }
+
+ .speed_text1{
+   font-weight: bold;
+ }
+
+ .speed_text2{
+   font-style: italic;
+   text-align: center;
+ }
+
+ .box-news{
+   border-style: solid;
    border-radius: 20px;
-   text-align: center;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-top: 10px;
+   background-color: white;
+ }
 
-   margin: auto;
-   width: 50%;
-   /* border: 3px solid black; */
-   margin: 50px;
+ #news-container{
+   background-color: #355764;
+ }
 
-}
-.h1{
-   /* font-weight:bold; */
-   margin-left: 100%;
-   color: red;
-   justify-content: center;
-   }
-
-.imgNews img {
-   display: block;
-   margin: 0 auto;
-   padding-top: 50px;
-   margin-left: 100%;
-   
-}
-.speed_text{
-   width: 100%;
-   float: left;
-   font-size: 22px;
-   color: #161616;
-   margin-left: 100%;
-}
-.speed_text1{
-   width: 100%;
-   float: left;
-   font-size: 35px;
-   color: #325662;
-   margin-left: 100%;
-}
-
-.post_text{
-   width: 100%;
-   float: left;
-   font-size: 16px;
-   color: #dcdcd9;
-   margin-left: 100%;
-}
-
-.long_text {
-   width: 150%;
-   font-size:20px;
-   text-align: center;
-   /* font-size: 16px; */
-   color: #2a2929;
-   margin: 0px;
-   padding-top: 10px;
-   margin-left: 100%;
-}
+ 

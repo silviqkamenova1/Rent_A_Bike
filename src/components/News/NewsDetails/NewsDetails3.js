@@ -6,14 +6,14 @@ export default function NewsDetails3() {
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
     return (
-        <div className="col-sm-4" to={'/news-details3'}>
-            <div className="box_main_1">
+        <div className="col-sm-4 offset-sm-4" to={'/news-details3'}>
+            <div className="box_main_1 box-news">
                 <div className="imgNews"><img alt='' src="assets/images/img-8.png" /></div>
                 <div className="padding_15">
-                    <h1 className='h1'>Team TotalEnergies to ride ENVE Melee road bike for next two seasons</h1>
-                    <h2 className="speed_text">The team will also use ENVE wheels and components</h2>
-                    <div className="post_text">Post by : Stan Portus <span className='span4'>December 5, 2023 at 3:00 pm</span></div>
-                    <p className="long_text">ENVE will provide Team TotalEnergies with its Melee road bike, wheels and components for the next two seasons.
+                    <h1 className='speed_text1'>Team TotalEnergies to ride ENVE Melee road bike for next two seasons</h1>
+                    <h2 className="speed_text2">The team will also use ENVE wheels and components</h2>
+                    <div className="post_text1">Post by : Stan Portus <span className='span4'>December 5, 2023 at 3:00 pm</span></div>
+                    <p className="long_text1">ENVE will provide Team TotalEnergies with its Melee road bike, wheels and components for the next two seasons.
 
                         TotalEnergie previously used Specialized bikes, but ENVE will expand its presence in professional road cycling with the new partnership.
 
