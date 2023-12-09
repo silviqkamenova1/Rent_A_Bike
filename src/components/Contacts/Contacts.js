@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Contacts.css';
+import { Link } from "react-router-dom";
 
 export default function Contacts() {
+
+   const [isVisible, setIsVisible] = useState(false);
+
+   useEffect(() => {
+      if (isVisible) {
+         // Set a timeout to hide the popup after 3 seconds
+         const timeoutId = setTimeout(() => {
+            setIsVisible(false);
+         }, 3000);
+
+         // Clear the timeout on component unmount or if the popup is closed before the timeout
+         return () => clearTimeout(timeoutId);
+      }
+   }, [isVisible]);
+
+   const handlePopupClick = () => {
+      // Show the popup on click
+      setIsVisible(true);
+      document.getElementById('subs-btn').style.display = 'none'
+   };
+
    return (
       <div className="footer_section layout_padding contact">
          <div className="container-fluid">
@@ -25,10 +47,17 @@ export default function Contacts() {
                         <li><a href="https://www.instagram.com/silviqkamenova/"><img alt='' src="assets/images/instagram-icon.png" /></a></li>
                      </ul>
                   </div>
-                  <div>
+                  <div id="subs-btn">
                      <input type="text" className="email_text" placeholder="Enter Your Email" name="Enter Your Email" />
-                     <div className="subscribe_bt "><a href="/subscribe">Subscribe</a></div>
-                     
+                     <div onClick={handlePopupClick} className="subscribe_bt ">
+                        <Link href="/subscribe">Subscribe</Link>
+                        {isVisible && (
+                           <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', padding: '20px', background: '#fff', boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', zIndex: 9999 }}>
+                              <p>Thanks for subscribing</p>
+                           </div>
+                        )}
+                     </div>
+
                   </div>
                </div>
             </div>
