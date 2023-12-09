@@ -4,15 +4,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Navigation() {
-    const { isAuthenticated,userEmail } = useContext(AuthContext);
+    const { isAuthenticated, userEmail } = useContext(AuthContext);
     return (
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to="/" className="logo"><img alt='' src="assets/images/logo.png" /></Link>
-            {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button> */}
-
             <div className="collapse navbar-collapse" id="navigation">
                 <ul className="navbar-nav mr-auto ">
                     <li className="nav-item active ">
@@ -24,26 +20,17 @@ export default function Navigation() {
                     <li className="nav-item">
                         <Link className="nav-link" to="/contacts">Contacts</Link>
                     </li>
-                    {/* <li className="nav-item">
-                        <Link className="nav-link" to="/Linkbout">About</Link>
-                    </li> */}
+
                     {isAuthenticated && (
                         <li className="nav-item">
                             <Link className="nav-link" to="/create">Add Bike</Link>
                         </li>
                     )}
-                    {/* {!isAuthenticated && (
-                        <> */}
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/news">News</Link>
-                            </li>
-                            {/* <li className="nav-item">
-                                <Link className="nav-link" to="/contact">Contact Us</Link>
-                            </li> */}
-                        {/* </>
-                    )} */}
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/news">News</Link>
+                    </li>
                 </ul>
-               
+
                 <form className="form-inline my-2 my-lg-0">
                     <div className="login_menu">
                         <ul>
@@ -51,7 +38,6 @@ export default function Navigation() {
                                 <>
                                     <li>Welcome, {userEmail}!</li>
                                     <li><Link to="/search" className="nav-btns"><img alt='' src="assets/images/search-icon.png" /></Link></li>
-                                    <li><Link to="/trolley" className="nav-btns">Profile</Link></li>
                                     <li><Link className="nav-btns" to="/logout">Logout</Link></li>
                                 </>
                             )}

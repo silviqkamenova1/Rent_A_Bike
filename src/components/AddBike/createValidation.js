@@ -2,8 +2,8 @@ export default function Validation(values){
     const errors = {}
 
     const size_pattern = /^[A-Z]{1,}$/;
-    const year_pattern = /^(?=.*\d){4}$/;
-    const price_pattern = /^(?=.*\d){1,}$/;
+    const year_pattern = /^\d{4}$/;
+    const price_pattern = /^\d{1,}$/;
     const image_pattern = /^https?:\/\/(.+)/;
        
 console.log(values.frame, values.type, values.size, values.year,values.price);

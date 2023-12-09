@@ -1,0 +1,67 @@
+.subscription-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .subscription-options {
+    margin: 20px 0;
+  }
+  
+  button {
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .subscription-options button {
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .subscribe-button {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .close-button {
+    background-color: #ccc;
+    color: #000;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  /* Optional: Add some animations for a smoother appearance */
+  .subscription-popup-enter {
+    opacity: 0;
+  }
+  
+  .subscription-popup-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  
+  .subscription-popup-exit {
+    opacity: 1;
+  }
+  
+  .subscription-popup-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }

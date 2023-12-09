@@ -3,7 +3,6 @@ import { Navigate, Outlet, useParams } from "react-router-dom";
 //import { useBikeContext } from "../../contexts/BikeContext";
 import { AuthContext, useAuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
-import { BikeContext } from "../../contexts/BikeCntext";
 
 export const BikeOwner = ({
     children,

@@ -4,7 +4,7 @@ import { useForm } from "../../hooks/useForm";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 
-export default function Register({
+export default function Register({trim, 
     onRegisterSubmit
 }) {
     //const { onRegisterSubmit } = useAuthContext()//useContext(AuthContext);
@@ -23,6 +23,9 @@ export default function Register({
      }
   
      const handelSubmit = (ev) => {
+        if (trim) {
+            ev.target.value = ev.target.value.trim();
+          }
         ev.preventDefault()
         onSubmit(ev);
         handleValidation(ev);
