@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 
 export default function News() {
-    // const [currentData, setCurrentDate] = useState(getDate())
+
     return (
         <div className="news_section layout_padding">
             <div className="container">

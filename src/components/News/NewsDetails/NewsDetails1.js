@@ -5,6 +5,16 @@ import './NewsDetails.css';
 export default function NewsDetails1() {
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
+
+    const [isActive, setIsActive] = useState(true);
+
+    const handleClick = () => {
+        // Disable the button after click
+        setIsActive(false);
+
+        // You can also perform other actions here if needed
+        console.log('Button clicked!');
+    };
     return (
         <div className="col-sm-4 offset-sm-4" >
             <div className="box_main_1 box-news">
@@ -27,8 +37,12 @@ export default function NewsDetails1() {
                             onClick={() => {
                                 setLikes(likes + 1);
                                 setLiked(true);
-                            }}>
-                            {likes} Likes
+                                handleClick()
+                            }} disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
+                            style={{ cursor: isActive ? 'pointer' : 'not-allowed' }} // Optionally change the cursor style
+                        >
+                            {isActive ? `${likes} Likes` : 'You already liked it!'}
+                            
                         </button>
                     </div>
                 </div>
