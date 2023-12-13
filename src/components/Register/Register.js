@@ -1,13 +1,12 @@
 import './Register.css'
 import Validation from './regValidation';
-import { useForm } from "../../hooks/useForm";
+// import { useForm } from "../../hooks/useForm";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
-export default function Register({
-    onRegisterSubmit
-}) {
-    //const { onRegisterSubmit } = useAuthContext()//useContext(AuthContext);
+export default function Register() {
+    const { onRegisterSubmit } = useContext(AuthContext);
     const [values, setValues] = useState({
         username: '',
         email: '',

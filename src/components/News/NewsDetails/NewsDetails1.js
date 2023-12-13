@@ -6,16 +6,16 @@ import './NewsDetails.css';
 export default function NewsDetails1() {
     const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes'), 10) || 0);
     const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked')) || false);
-    const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')) || true);
+    const {isActive, setIsActive} = useContext(AuthContext)
     
     const { userId, isAuthenticated } = useContext(AuthContext);
 
-    useEffect(() => {
-        // Save state to localStorage whenever it changes
-        localStorage.setItem('likes', likes);
-        localStorage.setItem('liked', JSON.stringify(liked));
-        localStorage.setItem('isActive', JSON.stringify(isActive));
-      }, [likes, liked, isActive]);
+    // useEffect(() => {
+    //     // Save state to localStorage whenever it changes
+    //     localStorage.setItem('likes', likes);
+    //     localStorage.setItem('liked', JSON.stringify(liked));
+    //     localStorage.setItem('isActive', JSON.stringify(isActive));
+    //   }, [likes, liked, isActive]);
 
     const handleClick = () => {
         // Disable the button after click

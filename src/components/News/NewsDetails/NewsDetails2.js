@@ -5,18 +5,18 @@ import './NewsDetails.css';
 //import { Link } from "react-router-dom";
 
 export default function NewsDetails2() {
-    const [likes, setLikes] = useState(0);
-    const [liked, setLiked] = useState(false);
-
-    const [isActive, setIsActive] = useState(true);
+    const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes'), 10) || 0);
+    const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked')) || false);
+    const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')));
+    
     const { userId, isAuthenticated } = useContext(AuthContext);
 
     const handleClick = () => {
         // Disable the button after click
+        setLikes(likes + 1);
+        setLiked(true);
         setIsActive(false);
 
-        // You can also perform other actions here if needed
-        console.log('Button clicked!');
     };
     return (
         <div className="col-sm-4 offset-sm-4" id='news-container' >

@@ -1,9 +1,9 @@
-import { CatalogItem } from "./CatalogItem/CatalogItem";
 import './Catalog.css'
-export default function Catalog({
-    bikes,
-}) {
-    //const { bikes } = useBikeContext()
+import { CatalogItem } from "./CatalogItem/CatalogItem";
+import { useContext } from "react";
+import { BikeContext, useBikeContext } from "../../contexts/BikeCntext";
+export default function Catalog() {
+    const { bikes } = useBikeContext()
     return (
         <div className="cycle_section layout_padding" id="body-bg">
             <div className="container">

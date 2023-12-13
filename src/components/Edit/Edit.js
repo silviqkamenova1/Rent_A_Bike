@@ -1,15 +1,14 @@
-import {  useEffect } from "react";
+import {  useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { bikeServiceFactory } from "../../services/bikeService";
+import { BikeContext, useBikeContext } from "../../contexts/BikeCntext";
 
 
-export default function Edit({
-   onBikeEditSubmit
-}) {
-   //const { onBikeEditSubmit } = useContext()
+export default function Edit() {
+   const { onBikeEditSubmit } = useBikeContext()
    const { bikeId } = useParams()// use it to make a request with useEffect
    const bikeService = useService(bikeServiceFactory)
    const { values, changeHandler, onSubmit, changeValues } = useForm({

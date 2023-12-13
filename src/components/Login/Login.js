@@ -1,21 +1,14 @@
 import './Login.css'
 
 import {  AuthContext } from "../../contexts/AuthContext";
-import { useForm } from "../../hooks/useForm";
+// import { useForm } from "../../hooks/useForm";
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import Validation from './loginValidation';
 
-export default function Login({
-   onLoginSubmit
-}) {
-   // access the data which we gave through context provider
-   // const { onLoginSubmit } = useContext(AuthContext);
+export default function Login() {
+   const { onLoginSubmit } = useContext(AuthContext);
    
-   //adding initial values which we want to control
-   //giving to the hook handler in the end
-   // data which should fill iin in the begining
-   // and then we added in the form
    const [values, setValues] = useState({
       email: '',
       password: '',

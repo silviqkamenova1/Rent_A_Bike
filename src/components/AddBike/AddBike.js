@@ -1,15 +1,15 @@
 import './AddBike.css';
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Validation from "./createValidation";
-import { useForm } from "../../hooks/useForm";
-import { useBikeContext } from '../../contexts/BikeCntext';
+// import { useForm } from "../../hooks/useForm";
+import { BikeContext, useBikeContext } from '../../contexts/BikeCntext';
 
 
-export default function AddBike({
-   onCerateBikeSubmit
-}) {
+export default function AddBike() {
+   const { onCerateBikeSubmit } = useBikeContext()
+
    const [values, setValues] = useState({
       frame: '',
       type: '',

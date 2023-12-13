@@ -6,15 +6,14 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { bikeServiceFactory } from "../../services/bikeService";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useService } from "../../hooks/useService";
+import { BikeContext } from '../../contexts/BikeCntext';
 
-export default function Details({
-   deleteBike
-}) {
+export default function Details() {
    const { bikeId } = useParams();
    const { userId, isAuthenticated } = useContext(AuthContext);
    const [bike, setBike] = useState({});
    
-   //const { deleteBike } = useContext(BikeContext);
+   const { deleteBike } = useContext(BikeContext);
    
    const [likeBtn, setLikeBtn] = useState(false)
    const bikeService = useService(bikeServiceFactory);
