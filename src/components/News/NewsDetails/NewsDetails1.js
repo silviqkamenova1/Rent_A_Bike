@@ -6,9 +6,9 @@ import './NewsDetails.css';
 export default function NewsDetails1() {
     const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes'), 10) || 0);
     const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked')) || false);
-    const {isActive, setIsActive} = useContext(AuthContext)
+    // const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')) );
     
-    const { userId, isAuthenticated } = useContext(AuthContext);
+    const { userId, isAuthenticated, isActive} = useContext(AuthContext);
 
     // useEffect(() => {
     //     // Save state to localStorage whenever it changes
@@ -21,7 +21,7 @@ export default function NewsDetails1() {
         // Disable the button after click
         setLikes(likes + 1);
         setLiked(true);
-        setIsActive(false);
+        isActive(false);
 
     };
     return (

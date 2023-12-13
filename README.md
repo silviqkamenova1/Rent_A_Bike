@@ -44,7 +44,7 @@ npm start
 
 ### 5. Explore the App
 
-Once the server and client are running, open your preferred browser (Chrome or Microsoft Edge is recommended) and go to [http://localhost:3000](http://localhost:3000) to access the Rent-A-Bike application.
+Once the server and client are running, open your preferred browser (Chrome or Microsoft Edge is recommended) and go to https://bike-for-rent.netlify.app to access the Rent-A-Bike application.
 
 ## Features
 

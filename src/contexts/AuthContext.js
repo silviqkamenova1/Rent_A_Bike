@@ -53,7 +53,7 @@ export const AuthProvider = ({
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken, //double negation
+        isAuthenticated: !!auth.accessToken, 
         isActive: true
     };
 
