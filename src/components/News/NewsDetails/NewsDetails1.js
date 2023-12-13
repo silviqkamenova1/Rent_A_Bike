@@ -6,8 +6,8 @@ import './NewsDetails.css';
 export default function NewsDetails1() {
     const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes'), 10) || 0);
     const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked')) || false);
-
     const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')) || true);
+    
     const { userId, isAuthenticated } = useContext(AuthContext);
 
     useEffect(() => {
