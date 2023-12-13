@@ -7,7 +7,7 @@ export default function Validation(values) {
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{5,}$/;
     // 1 digit, 1 small car., 1 capt. car., 
 
-    if (values.username === '' || !whitspace_pattern.test(values.username)) {
+    if (values.username === '') {
         errors.username = 'Username is required!';
     } else if (!username.test(values.username)) {
         errors.username = 'Username is not correct!';
@@ -15,7 +15,7 @@ export default function Validation(values) {
     }
 
 
-    if (values.email === '' || !whitspace_pattern.test(values.email)) {
+    if (values.email === '' ) {
         errors.email = 'Email is required!';
     } else if (!email_pattern.test(values.email)) {
         errors.email = 'This is not a valid email format!';
@@ -23,7 +23,7 @@ export default function Validation(values) {
     }
 
 
-    if (values.password ==='' || !whitspace_pattern.test(values.password)) {
+    if (values.password ==='') {
         errors.password = 'Password is required!';
     } else if (!password_pattern.test(values.password)) {
         errors.password = 'Password is invalid!';

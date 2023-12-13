@@ -6,11 +6,9 @@ Welcome to Rent-A-Bike, your go-to platform for renting various types of bikes. 
 
 Follow these steps to set up the project on your local machine:
 
-### 1. Clone the Repository
+### 1. Open the App in a browser
 
-```bash
-git clone https://github.com/silviqkamenova1/Rent_A_Bike
-```
+https://bike-for-rent.netlify.app
 
 ### 2. Install Dependencies
 

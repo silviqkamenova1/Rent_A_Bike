@@ -1,17 +1,44 @@
 export default function Validation(values){
     const errors = {}
 
+    const whitespace_pattern = /\s+/g
     const size_pattern = /^[A-Z]{1,}$/;
     const year_pattern = /^\d{4}$/;
     const price_pattern = /^\d{1,}$/;
     const image_pattern = /^https?:\/\/(.+)/;
        
-console.log(values.frame, values.type, values.size, values.year,values.price);
+    
+    // if(!whitespace_pattern.test(values.frame)){
+    //     errors.frame = 'Frame is an empty input!'
+    // }
+    // if(!whitespace_pattern.test(values.type)){
+    //     errors.type = 'Type is an empty input!'
+    // }
+
+    // if(!whitespace_pattern.test(values.size)){
+    //     errors.size = 'Size is an empty input!'
+    // }
+    // if(!whitespace_pattern.test(values.year)){
+    //     errors.year = 'Year is an empty input!'
+    // }
+    // if(!whitespace_pattern.test(values.price)){
+    //     errors.price = 'Price is an empty input!'
+    // }
+    // if(!whitespace_pattern.test(values.image)){
+    //     errors.image = 'Image is an empty input!'
+    // }
+    // if(!whitespace_pattern.test(values.description)){
+    //     errors.description = 'Description is an empty input!'
+    // }
+
+
     if(values.frame === ''){
         errors.frame = 'Frame is required!';
     } else if((values.frame).length < 3){
         errors.frame = 'Frame input should be at least 3 characters!'
-    } 
+    } else {
+        
+    }
 
     if(values.type === ''){
         errors.type = 'Type is required!';

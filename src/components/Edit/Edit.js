@@ -1,10 +1,9 @@
-import { useContext, useEffect } from "react";
+import {  useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { bikeServiceFactory } from "../../services/bikeService";
-//import { useBikeContext } from "../../contexts/BikeContext";
 
 
 export default function Edit({

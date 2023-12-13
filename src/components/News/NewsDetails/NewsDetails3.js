@@ -1,10 +1,23 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './NewsDetails.css';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 
 export default function NewsDetails3() {
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
+
+    const { userId, isAuthenticated } = useContext(AuthContext);
+
+    const [isActive, setIsActive] = useState(true);
+
+    const handleClick = () => {
+        // Disable the button after click
+        setIsActive(false);
+
+        // You can also perform other actions here if needed
+        console.log('Button clicked!');
+    };
     return (
         <div className="col-sm-4 offset-sm-4" to={'/news-details3'}>
             <div className="box_main_1 box-news">
@@ -25,16 +38,23 @@ export default function NewsDetails3() {
 
                         Team TotalEnergies manager Jean-René Bernaudeau says the team were already familiar with ENVE's wheels, but discussions with ENVE's engineers began in October.
                     </p>
-                    <div className="like-button-container">
-                        <button
-                            className={`like-button ${liked ? 'liked' : ''}`}
-                            onClick={() => {
-                                setLikes(likes + 1);
-                                setLiked(true);
-                            }}>
-                            {likes} Likes
-                        </button>
-                    </div>
+                    {isAuthenticated && (
+
+                        <div className="like-button-container">
+                            <button
+                                className={`like-button ${liked ? 'liked' : ''}`}
+                                onClick={() => {
+                                    setLikes(likes + 1);
+                                    setLiked(true);
+                                    handleClick();
+
+                                }} disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
+                                style={{ cursor: isActive ? 'pointer' : 'not-allowed' }} // Optionally change the cursor style
+                            >
+                                {isActive ? `${likes} Likes` : 'You already liked it!'}
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

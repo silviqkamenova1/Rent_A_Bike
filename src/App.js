@@ -75,7 +75,7 @@ export default function App() {
          setAuth(result);
          navigate('/');
       } catch (error) {
-
+         alert(error.message)      
       }
    };
 

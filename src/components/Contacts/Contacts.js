@@ -21,7 +21,7 @@ export default function Contacts() {
    const handlePopupClick = () => {
       // Show the popup on click
       setIsVisible(true);
-      document.getElementById('subs-btn').style.display = 'none'
+      document.getElementById('subsBtn').textContent = 'Thanks for subscribing!'
    };
 
    return (
@@ -48,14 +48,10 @@ export default function Contacts() {
                      </ul>
                   </div>
                   <div id="subs-btn">
-                     <input type="text" className="email_text" placeholder="Enter Your Email" name="Enter Your Email" />
+                     {/* <input type="text" className="email_text" placeholder="Enter Your Email" name="Enter Your Email" /> */}
                      <div onClick={handlePopupClick} className="subscribe_bt ">
-                        <Link href="/subscribe">Subscribe</Link>
-                        {isVisible && (
-                           <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', padding: '20px', background: '#fff', boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', zIndex: 9999 }}>
-                              <p>Thanks for subscribing</p>
-                           </div>
-                        )}
+                        <Link id="subsBtn" href="/subscribe">Subscribe</Link>
+   
                      </div>
 
                   </div>

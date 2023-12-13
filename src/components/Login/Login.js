@@ -6,37 +6,53 @@ import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import Validation from './loginValidation';
 
-export default function Login() {
+export default function Login({
+   onLoginSubmit
+}) {
    // access the data which we gave through context provider
-   const { onLoginSubmit } = useContext(AuthContext);
+   // const { onLoginSubmit } = useContext(AuthContext);
    
    //adding initial values which we want to control
    //giving to the hook handler in the end
    // data which should fill iin in the begining
    // and then we added in the form
-   const { values, changeHandler, onSubmit } = useForm({
+   const [values, setValues] = useState({
       email: '',
       password: '',
    }, onLoginSubmit);
 
-   const [formErrors, setformErrors] = useState({});
-
-   function handleValidation(ev){
-      ev.preventDefault();
-      setformErrors(Validation(values))
-   }
-
-   const handelSubmit = (ev) => {
-      ev.preventDefault()
-      onSubmit(ev);
-      handleValidation(ev);
-   }
+   const [errors, setErrors] = useState({});
+  
+   const changeHandler = (e) => {
+      const { name, value } = e.target;
+      setValues({ ...values, [name]: value });
+      setErrors({ ...errors, [name]: '' }); // Clear the error when the input changes
+   };
+  
+   const validateForm = () => {
+      const validationErrors = Validation(values);
+      setErrors(validationErrors);
+      return Object.keys(validationErrors).length === 0;
+   };
+  
+   const onSubmit = (e) => {
+      e.preventDefault();
+      const isValid = validateForm();
+  
+      if (isValid) {
+         // Proceed with form submission logic
+         onLoginSubmit(values)
+         console.log('Form submitted:', values);
+      } else {
+         console.log('Form validation failed');
+      }
+   };
    return (
       <div className="contact_section layout_padding">
          <div className="container">
             <div className="contact_main">
                <h1 className="request_text">Login</h1>
-               <form method="POST" onSubmit={handelSubmit} >
+               <form method="POST" onSubmit={onSubmit} >
                   <div className="form-group">
                      <input
                         type="email"
@@ -46,7 +62,7 @@ export default function Login() {
                         value={values.email}
                         onChange={changeHandler}
                      />
-                     {formErrors.email && <p style={{color:"red"}}>{formErrors.email}</p>}
+                     {errors.email && <p style={{color:"red"}}>{errors.email}</p>}
                   </div>
                   <div className="form-group">
                      <input
@@ -57,7 +73,7 @@ export default function Login() {
                         value={values.password}
                         onChange={changeHandler}
                         />
-                        {formErrors.password && <p style={{color:"red"}}>{formErrors.password}</p>}
+                        {errors.password && <p style={{color:"red"}}>{errors.password}</p>}
                   </div>
 
                   <p className="field">

@@ -1,10 +1,23 @@
-import { useState } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
+
+import { useState,useContext } from 'react';
 import './NewsDetails.css';
 //import { Link } from "react-router-dom";
 
 export default function NewsDetails2() {
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
+
+    const [isActive, setIsActive] = useState(true);
+    const { userId, isAuthenticated } = useContext(AuthContext);
+
+    const handleClick = () => {
+        // Disable the button after click
+        setIsActive(false);
+
+        // You can also perform other actions here if needed
+        console.log('Button clicked!');
+    };
     return (
         <div className="col-sm-4 offset-sm-4" id='news-container' >
             <div className="box_main_1 box-news">
@@ -23,16 +36,21 @@ export default function NewsDetails2() {
 
                         Valeo says the transmission system, which sits in the bottom bracket, analyses data from the wheel speed, cadence, torque and gradient sensors with predictive software. It then adjusts the assist level, gear and cadence to best suit the rider’s behaviour and environment.</p>
 
+                        {isAuthenticated && (
                     <div className="like-button-container">
                         <button
                             className={`like-button ${liked ? 'liked' : ''}`}
                             onClick={() => {
                                 setLikes(likes + 1);
                                 setLiked(true);
-                            }}>
-                            {likes} Likes
+                                handleClick()
+                            }} disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
+                            style={{ cursor: isActive ? 'pointer' : 'not-allowed' }} // Optionally change the cursor style
+                            >
+                            {isActive ? `${likes} Likes` : 'You already liked it!'}
                         </button>
                     </div>
+                    )}
                 </div>
             </div>
         </div>
