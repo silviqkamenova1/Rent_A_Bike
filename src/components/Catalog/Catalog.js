@@ -3,7 +3,10 @@ import { CatalogItem } from "./CatalogItem/CatalogItem";
 import { useContext } from "react";
 import { BikeContext, useBikeContext } from "../../contexts/BikeCntext";
 export default function Catalog() {
-    const { bikes } = useBikeContext()
+    const { bikes } = useBikeContext();
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
     return (
         <div className="cycle_section layout_padding" id="body-bg">
             <div className="container">

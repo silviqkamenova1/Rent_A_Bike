@@ -34,9 +34,7 @@ export default function Edit() {
          <div className="container">
             <div className="contact_main">
                <h1 className="request_text">EDIT</h1>
-               {/* <div className="box_main form_pic">
-                  <div className="image_2"><img alt='' src={bike.image} /></div>
-               </div> */}
+
                <form action="POST" onSubmit={onSubmit}>
                   <div className="form-group">
                      <input type="text" className="email-bt" placeholder="Frame" name="frame" value={values.frame} onChange={changeHandler} />
