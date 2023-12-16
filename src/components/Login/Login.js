@@ -33,7 +33,6 @@ export default function Login() {
       const isValid = validateForm();
   
       if (isValid) {
-         // Proceed with form submission logic
          onLoginSubmit(values)
          console.log('Form submitted:', values);
       } else {
