@@ -20,16 +20,6 @@ export const BikeProvider = ({
 
     const bikeService = bikeServiceFactory(context.token);
 
-    const onAuthorisedCreate = async (data) => {
-        try {
-            const result = await authService.login(data);
-            setAuth(result);
-
-            // navigate('/');
-        } catch (error) {
-            console.log('There is a problem');
-        }
-    };
 
     useEffect(() => {
         bikeService.getAll()
@@ -63,7 +53,6 @@ export const BikeProvider = ({
 
      const contextValues = {
         bikes,
-        onAuthorisedCreate,
         onCerateBikeSubmit,
         onBikeEditSubmit,
         deleteBike,

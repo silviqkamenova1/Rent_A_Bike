@@ -42,7 +42,7 @@ export default function NewsDetails1() {
                     </p>
                     {isAuthenticated && (
                     <div className="like-button-container">
-                        <button
+                        {/* <button
                             className={`like-button ${liked ? 'liked' : ''}`}
                             onClick={handleClick} 
                             disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
@@ -50,7 +50,12 @@ export default function NewsDetails1() {
                         >
                             {isActive ? `${likes} Likes` : 'You already liked it!'}
                             
-                        </button>
+                        </button> */}
+                        <div className="content">
+                            <span className="thumb">&#128077;</span>
+                            <span className="like">Like</span>
+                            <span className="number"></span>
+                        </div>
                     </div>
                     )}
                 </div>

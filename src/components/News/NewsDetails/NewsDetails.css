@@ -1,21 +1,24 @@
-.pic{
+.pic {
    display: block;
    margin-left: auto;
    margin-right: auto;
 }
+
 .like-button-container {
    display: flex;
    float: inline-end;
    justify-content: center;
 }
+
 .like-button-container {
    display: flex;
    justify-content: center;
    align-items: center;
    margin: 20px;
 }
+
 .like-button {
-   border: none; 
+   border: none;
    outline: none;
    background-color: transparent;
    font-size: 18px;
@@ -26,19 +29,23 @@
    padding: 10px 20px;
    border: 2px solid #333;
 }
+
 .like-button:hover {
    color: #fff;
    background-color: #f7c17b;
 }
+
 .like-button.liked {
    color: #325662;
-   border-color:  #325662;
+   border-color: #325662;
 }
+
 /* For mobile screens */
 @media (max-width: 768px) {
    .like-button-container {
       flex-direction: column;
    }
+
    .like-button {
       font-size: 16px;
       margin-bottom: 10px;
@@ -46,45 +53,76 @@
       border-width: 1px;
    }
 }
+
 .frame {
    height: 350px;
    width: 100%;
    overflow: hidden;
 
- }
+}
 
- .imgNews{
+.imgNews {
    padding-top: 50px;
- }
- 
- .imgNews img{
+}
+
+.imgNews img {
    border-radius: 20%;
- }
- .long_text1{
+}
+
+.long_text1 {
    font-size: large;
    text-align: center;
- }
+}
 
- .speed_text1{
+.speed_text1 {
    font-weight: bold;
- }
+}
 
- .speed_text2{
+.speed_text2 {
    font-style: italic;
    text-align: center;
- }
+}
 
- .box-news{
+.box-news {
    border-style: solid;
    border-radius: 20px;
    padding-left: 10px;
    padding-right: 10px;
    margin-top: 10px;
    background-color: white;
- }
+}
 
- #news-container{
+#news-container {
    background-color: #355764;
- }
+}
 
- 
+
+.content {
+   border: 2px solid #355764;
+   padding: 8px 12px;
+   border-radius: 5px;
+   display: flex;
+   cursor: pointer;
+}
+
+.content .thumb {
+   font-size: 25px;
+
+}
+/* .thumb:hover{
+   background-position: right;
+   animation: animate .8s steps(28) 1;
+} */
+
+.content .like {
+   font-size: large;
+   font-family: 'Montserrat', sans-serif;
+   padding-top: 10px;
+   padding-right: 5px;
+}
+
+.number:before {
+   font-size: large;
+   font-size: 21px;
+   content: '0';
+}
