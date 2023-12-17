@@ -126,3 +126,22 @@
    font-size: 21px;
    content: '0';
 }
+
+
+
+button {
+   padding: 10px 15px;
+   font-size: 16px;
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   outline: none;
+   transition: background-color 0.3s;
+ }
+ 
+ button:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+ }

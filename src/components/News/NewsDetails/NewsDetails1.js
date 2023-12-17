@@ -6,7 +6,7 @@ import './NewsDetails.css';
 export default function NewsDetails1() {
     const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes'), 10) || 0);
     const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked')) || false);
-    const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')));
+    const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')) || true);
     
     const { userId, isAuthenticated } = useContext(AuthContext);
 
@@ -42,7 +42,7 @@ export default function NewsDetails1() {
                     </p>
                     {isAuthenticated && (
                     <div className="like-button-container">
-                        {/* <button
+                        <button
                             className={`like-button ${liked ? 'liked' : ''}`}
                             onClick={handleClick} 
                             disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
@@ -50,12 +50,7 @@ export default function NewsDetails1() {
                         >
                             {isActive ? `${likes} Likes` : 'You already liked it!'}
                             
-                        </button> */}
-                        <div className="content">
-                            <span className="thumb">&#128077;</span>
-                            <span className="like">Like</span>
-                            <span className="number"></span>
-                        </div>
+                        </button>
                     </div>
                     )}
                 </div>

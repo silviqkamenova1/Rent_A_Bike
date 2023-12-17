@@ -10,13 +10,12 @@ export default function NewsDetails2() {
     const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')));
     
     const { userId, isAuthenticated } = useContext(AuthContext);
-
     const handleClick = () => {
         // Disable the button after click
-        setLikes(likes + 1);
-        setLiked(true);
         setIsActive(false);
 
+        // You can also perform other actions here if needed
+        console.log('Button clicked!');
     };
     return (
         <div className="col-sm-4 offset-sm-4" id='news-container' >
