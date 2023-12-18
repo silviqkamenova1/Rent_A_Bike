@@ -1,27 +1,25 @@
+import { useState, useContext, useEffect } from 'react';
+
 import { AuthContext } from '../../../contexts/AuthContext';
 
-import { useState,useContext, useEffect } from 'react';
 import './NewsDetails.css';
 
 export default function NewsDetails1() {
-    const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes'), 10) || 0);
-    const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked')) || false);
-    const [isActive, setIsActive] = useState(JSON.parse(localStorage.getItem('isActive')) || true);
-    
-    const { userId, isAuthenticated } = useContext(AuthContext);
+    const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes1'), 10) || 0);
+    const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked1')) || false);
 
-    // useEffect(() => {
-    //     // Save state to localStorage whenever it changes
-    //     localStorage.setItem('likes', likes);
-    //     localStorage.setItem('liked', JSON.stringify(liked));
-    //     localStorage.setItem('isActive', JSON.stringify(isActive));
-    //   }, [likes, liked, isActive]);
 
+    const { userId, isAuthenticated, isActive } = useContext(AuthContext);
+
+    useEffect(() => {
+        // Save state to localStorage whenever it changes
+        localStorage.setItem('likes1', likes);
+        localStorage.setItem('liked1', JSON.stringify(liked));
+        localStorage.setItem('isActive', JSON.stringify(isActive));
+    }, [likes, liked, isActive]);
     const handleClick = () => {
-        // Disable the button after click
         setLikes(likes + 1);
         setLiked(true);
-        setIsActive(false);
 
     };
     return (
@@ -41,15 +39,12 @@ export default function NewsDetails1() {
                         The Paralane remains competitively priced compared to the best endurance road bikes. The top-of-the-range Paralane 8.9 with Ultegra Di2 R8170 costs £5,199 / €5,299 / AU$6,999 (US pricing is to be confirmed).
                     </p>
                     {isAuthenticated && (
-                    <div className="like-button-container">
+                        <div className="like-button-container">
                         <button
                             className={`like-button ${liked ? 'liked' : ''}`}
-                            onClick={handleClick} 
-                            disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
-                            style={{ cursor: isActive ? 'pointer' : 'not-allowed' }} // Optionally change the cursor style
+                            onClick={handleClick}
                         >
-                            {isActive ? `${likes} Likes` : 'You already liked it!'}
-                            
+                            {`${likes} Likes`}
                         </button>
                     </div>
                     )}

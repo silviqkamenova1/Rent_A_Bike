@@ -24,6 +24,7 @@ export default function Catalog() {
         };
         fetchPosts();
     }, []);
+
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPOst = indexOfLastPost - postPerPage;
     const currentPosts = bikes.slice(indexOfFirstPOst, indexOfLastPost);

@@ -18,7 +18,6 @@ export default function AddBike() {
       price: '',
       image: '',
       description: '',
-      rent: false
    });
   
    const [errors, setErrors] = useState({});

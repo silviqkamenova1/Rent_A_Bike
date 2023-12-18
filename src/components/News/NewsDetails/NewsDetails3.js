@@ -1,22 +1,28 @@
-import { useContext, useState } from 'react';
-import './NewsDetails.css';
+import { useState, useContext, useEffect } from 'react';
+
 import { AuthContext } from '../../../contexts/AuthContext';
+
+import './NewsDetails.css';
+
 
 
 export default function NewsDetails3() {
-    const [likes, setLikes] = useState(0);
-    const [liked, setLiked] = useState(false);
+    const [likes, setLikes] = useState(parseInt(localStorage.getItem('likes3'), 10) || 0);
+    const [liked, setLiked] = useState(JSON.parse(localStorage.getItem('liked3')) || false);
 
-    const { userId, isAuthenticated } = useContext(AuthContext);
 
-    const [isActive, setIsActive] = useState(true);
+    const { userId, isAuthenticated, isActive } = useContext(AuthContext);
 
+    useEffect(() => {
+        // Save state to localStorage whenever it changes
+        localStorage.setItem('likes3', likes);
+        localStorage.setItem('liked3', JSON.stringify(liked));
+        localStorage.setItem('isActive', JSON.stringify(isActive));
+    }, [likes, liked, isActive]);
     const handleClick = () => {
-        // Disable the button after click
-        setIsActive(false);
+        setLikes(likes + 1);
+        setLiked(true);
 
-        // You can also perform other actions here if needed
-        console.log('Button clicked!');
     };
     return (
         <div className="col-sm-4 offset-sm-4" to={'/news-details3'}>
@@ -39,21 +45,14 @@ export default function NewsDetails3() {
                         Team TotalEnergies manager Jean-René Bernaudeau says the team were already familiar with ENVE's wheels, but discussions with ENVE's engineers began in October.
                     </p>
                     {isAuthenticated && (
-
                         <div className="like-button-container">
-                            <button
-                                className={`like-button ${liked ? 'liked' : ''}`}
-                                onClick={() => {
-                                    setLikes(likes + 1);
-                                    setLiked(true);
-                                    handleClick();
-
-                                }} disabled={!isActive} // Set the 'disabled' attribute based on the 'isActive' state
-                                style={{ cursor: isActive ? 'pointer' : 'not-allowed' }} // Optionally change the cursor style
-                            >
-                                {isActive ? `${likes} Likes` : 'You already liked it!'}
-                            </button>
-                        </div>
+                        <button
+                            className={`like-button ${liked ? 'liked' : ''}`}
+                            onClick={handleClick}
+                        >
+                            {`${likes} Likes`}
+                        </button>
+                    </div>
                     )}
                 </div>
             </div>
